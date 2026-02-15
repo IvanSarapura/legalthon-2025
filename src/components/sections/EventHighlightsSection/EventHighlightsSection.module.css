@@ -1,0 +1,53 @@
+/* Mobile first */
+.section {
+  padding: 2.5rem 1.25rem 3rem;
+  background-color: var(--section-alt-bg, #f8f8f8);
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.04em;
+  color: var(--foreground);
+}
+
+.carouselPlaceholder {
+  min-height: 200px;
+  border: 2px dashed var(--card-border, #e0e0e0);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  background-color: var(--background);
+}
+
+.placeholderText {
+  font-size: 0.875rem;
+  color: var(--text-tertiary, #999);
+}
+
+.cta {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .carouselPlaceholder {
+    min-height: 320px;
+    margin-bottom: 2rem;
+  }
+}
