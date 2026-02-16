@@ -5,7 +5,6 @@ import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Navbar, HtmlLang } from "@/components/layout";
-import styles from "./layout.module.css";
 
 type Props = {
   children: React.ReactNode;
@@ -40,7 +39,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     <NextIntlClientProvider messages={messages} locale={locale}>
       <HtmlLang locale={locale} />
       <Navbar />
-      <div className={styles.mainOffset}>{children}</div>
+      {children}
     </NextIntlClientProvider>
   );
 }
