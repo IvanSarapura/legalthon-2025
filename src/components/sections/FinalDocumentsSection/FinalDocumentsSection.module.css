@@ -115,11 +115,12 @@
   border-color: #e5a855; /* Bronce más claro */
 }
 
+/* Mobile: icono más grande y menos margen inferior para congruencia visual */
 .docIcon {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 3rem;
+  height: 3rem;
   color: var(--primary);
-  margin-bottom: 32px;
+  margin-bottom: 1rem;
   flex-shrink: 0;
 }
 
