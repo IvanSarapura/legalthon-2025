@@ -1,12 +1,16 @@
 /* Mobile first: base = móvil, mejoras con min-width */
 .section {
   position: relative;
+  min-height: 100vh; /* Cambio de min-height a 100vh para desktop */
   padding: 4rem var(--section-padding-inline) 4.5rem;
   text-align: center;
   background-image: url("/images/JusticeGemini.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .section::before {
@@ -84,6 +88,7 @@
 
 @media (min-width: 768px) {
   .section {
+    min-height: 100vh; /* Cambio de min-height a 100vh para desktop */
     padding: 8rem var(--section-padding-inline) 8rem;
   }
 
