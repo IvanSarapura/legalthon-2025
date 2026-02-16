@@ -58,6 +58,10 @@
   animation: carouselScroll 120s linear infinite;
 }
 
+.carouselPaused .carouselTrackContinuous {
+  animation-play-state: paused;
+}
+
 .carouselTrackNoMotion {
   animation: none;
 }
