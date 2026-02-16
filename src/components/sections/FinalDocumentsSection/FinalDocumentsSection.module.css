@@ -92,7 +92,7 @@
   width: 2.5rem;
   height: 2.5rem;
   color: var(--primary);
-  margin-bottom: 1rem;
+  margin-bottom: 32px;
   flex-shrink: 0;
 }
 
@@ -102,7 +102,7 @@
   line-height: 1.3;
   text-align: center;
   color: var(--text-main);
-  margin-bottom: 1.25rem;
+  margin-bottom: 32px;
 }
 
 .actions {
@@ -116,6 +116,11 @@
 
 .viewButton {
   flex-shrink: 0;
+  height: 40px;
+  min-height: 40px;
+  padding-top: 0;
+  padding-bottom: 0;
+  align-items: center;
 }
 
 .downloadButton {
@@ -203,12 +208,17 @@
   .docIcon {
     width: 3rem;
     height: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 32px;
   }
 
   .docTitle {
     font-size: 1.1875rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 32px;
+  }
+
+  .viewButton {
+    height: 44px;
+    min-height: 44px;
   }
 
   .downloadButton {
