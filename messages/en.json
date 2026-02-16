@@ -55,7 +55,12 @@
   "eventHighlights": {
     "title": "EVENT HIGHLIGHTS",
     "carouselPlaceholder": "Image carousel (coming soon)",
-    "ctaAlbum": "VIEW FULL ALBUM"
+    "ctaAlbum": "VIEW FULL ALBUM",
+    "carouselPrev": "Previous",
+    "carouselNext": "Next",
+    "carouselPause": "Pause carousel",
+    "carouselPlay": "Resume carousel",
+    "carouselSlideLabel": "Image {current} of {total}"
   },
   "organizers": {
     "organize": "ORGANIZED BY",

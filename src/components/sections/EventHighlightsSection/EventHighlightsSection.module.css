@@ -29,6 +29,77 @@
   color: var(--text-tertiary);
 }
 
+/* Carrusel: 4 imágenes visibles, scroll horizontal continuo e infinito.
+   Proporción rectangular (3:2 por celda) para no deformar las fotos. */
+.carousel {
+  margin-bottom: 1.5rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+/* 6:1 = 4 celdas de 3:2 → fotos pequeñas y en escala correcta */
+.carouselViewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 6 / 1;
+}
+
+.carouselTrack {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  will-change: transform;
+  /* Ancho explícito = (número de imágenes) × 2 (duplicado) × 25vw por slide */
+  width: max-content;
+}
+
+.carouselTrackContinuous {
+  animation: carouselScroll 120s linear infinite; /* Aumentado de 90s a 120s */
+}
+
+.carouselTrackNoMotion {
+  animation: none;
+}
+
+/* Distancia = una vuelta completa (--carousel-count slides × 25vw).
+   Sin vw, translateX(-50%) puede resolverse mal y el bucle se corta antes. */
+@keyframes carouselScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * var(--carousel-count, 29) * 25vw));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carouselTrackContinuous {
+    animation: none;
+  }
+}
+
+/* Ancho fijo en vw para que 4 quepan en 100vw y la distancia de animación sea predecible */
+.carouselSlide {
+  flex: 0 0 25vw;
+  width: 25vw;
+  height: 100%;
+  position: relative;
+  min-width: 0;
+}
+
+/* contain: mantiene la proporción real de la foto (rectangular), sin recortar */
+.carouselImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  vertical-align: middle;
+  background-color: var(--surface);
+}
+
 .cta {
   display: block;
   width: 100%;
@@ -44,6 +115,10 @@
 
   .carouselPlaceholder {
     min-height: 320px;
+    margin-bottom: 2rem;
+  }
+
+  .carousel {
     margin-bottom: 2rem;
   }
 }

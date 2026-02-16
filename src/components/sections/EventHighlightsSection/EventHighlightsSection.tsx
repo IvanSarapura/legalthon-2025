@@ -1,6 +1,16 @@
 import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui";
+import {
+  HIGHLIGHTS_IMAGES,
+  HIGHLIGHTS_IMAGES_BASE,
+} from "@/data/highlightsImages";
+import { HighlightsCarousel } from "./HighlightsCarousel";
 import styles from "./EventHighlightsSection.module.css";
+
+const highlightsImages = HIGHLIGHTS_IMAGES.map((filename) => ({
+  src: `${HIGHLIGHTS_IMAGES_BASE}/${filename}`,
+  alt: "Foto del evento Legalthon 2025",
+}));
 
 export async function EventHighlightsSection() {
   const t = await getTranslations("eventHighlights");
@@ -10,10 +20,15 @@ export async function EventHighlightsSection() {
       <h2 id="highlights-title" className={styles.title}>
         {t("title")}
       </h2>
-      <div className={styles.carouselPlaceholder} aria-hidden="true">
-        <span className={styles.placeholderText}>{t("carouselPlaceholder")}</span>
-      </div>
-      <Button as="a" href="#" variant="secondary" className={styles.cta}>
+      <HighlightsCarousel images={highlightsImages} />
+      <Button
+        as="a"
+        href="https://drive.google.com/drive/folders/1mev0b_SdLMPrpnquWlsbTONuEUG6Y85P"
+        variant="secondary"
+        className={styles.cta}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {t("ctaAlbum")}
       </Button>
     </section>

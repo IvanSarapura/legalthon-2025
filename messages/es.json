@@ -55,7 +55,12 @@
   "eventHighlights": {
     "title": "HIGHLIGHTS DEL EVENTO",
     "carouselPlaceholder": "Carrusel de imágenes (próximamente)",
-    "ctaAlbum": "VER ÁLBUM COMPLETO"
+    "ctaAlbum": "VER ÁLBUM COMPLETO",
+    "carouselPrev": "Anterior",
+    "carouselNext": "Siguiente",
+    "carouselPause": "Pausar carrusel",
+    "carouselPlay": "Reanudar carrusel",
+    "carouselSlideLabel": "Imagen {current} de {total}"
   },
   "organizers": {
     "organize": "ORGANIZAN",
