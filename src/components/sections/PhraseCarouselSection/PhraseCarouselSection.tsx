@@ -10,8 +10,20 @@ const PHRASE_KEYS = [
   "inmutabilidad",
   "gobernanzaDescentralizada",
   "identidadSoberana",
-  "researchFirst",
+  "consenso",
+  "innovacion",
 ] as const;
+
+/** Valores por defecto por si la clave no está en messages (evita MISSING_MESSAGE). */
+const PHRASE_DEFAULTS: Record<(typeof PHRASE_KEYS)[number], string> = {
+  trazabilidad: "Trazabilidad",
+  notYourKeys: "Not your keys, not your coins",
+  inmutabilidad: "Inmutabilidad",
+  gobernanzaDescentralizada: "Gobernanza descentralizada",
+  identidadSoberana: "Identidad soberana",
+  consenso: "Consenso",
+  innovacion: "Innovación",
+};
 
 const SEPARATOR = " • ";
 
@@ -20,7 +32,9 @@ export function PhraseCarouselSection() {
   const [isPaused, setIsPaused] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
-  const phrases = PHRASE_KEYS.map((key) => t(key));
+  const phrases = PHRASE_KEYS.map((key) =>
+    t(key, { defaultMessage: PHRASE_DEFAULTS[key] })
+  );
   const itemsWithSeparators = [
     ...phrases.flatMap((phrase, i) => (i === 0 ? [phrase] : [SEPARATOR, phrase])),
     SEPARATOR,
