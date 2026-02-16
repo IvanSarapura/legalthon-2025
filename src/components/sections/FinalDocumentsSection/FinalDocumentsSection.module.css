@@ -23,19 +23,19 @@
 
 .podium {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.75rem;
-  max-width: 720px;
+  grid-template-columns: 1fr;
+  gap: 2.5rem; /* Mobile: más separación entre las 3 cards apiladas */
+  max-width: 960px;
   margin: 0 auto 1.5rem;
   align-items: stretch;
 }
 
-/* Orden visual: 2º (izq) | 1º (centro) | 3º (der) */
-.cardSecond {
+/* Mobile: una columna. Orden vertical = centro (1º) arriba, izq (2º), der (3º) abajo */
+.cardFirst {
   order: 0;
 }
 
-.cardFirst {
+.cardSecond {
   order: 1;
 }
 
@@ -43,9 +43,100 @@
   order: 2;
 }
 
-.placeholder {
-  font-size: 0.8125rem;
-  color: var(--text-light);
+/* Mismo tamaño que cards de El camino de la innovación */
+.cardSecond,
+.cardFirst,
+.cardThird {
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1.5rem;
+}
+
+/* Píldora de premio: centrada en el borde superior, 50% fuera de la card (no clicable) */
+.prizeBadge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.35rem 0.875rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  border-radius: 9999px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.prizeBadgeFirst {
+  background: #d4af37;
+  color: #1a1a1a;
+}
+
+.prizeBadgeSecond {
+  background: #c0c0c0;
+  color: #1a1a1a;
+}
+
+.prizeBadgeThird {
+  background: #cd7f32;
+  color: #1a1a1a;
+}
+
+.docIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.docTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--text-main);
+  margin-bottom: 1.25rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+.viewButton {
+  flex-shrink: 0;
+}
+
+.downloadButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 0.5rem;
+  border: 2px solid var(--color-border);
+  background: transparent;
+  color: var(--text-main);
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.downloadButton:hover {
+  background: var(--surface-hover);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .note {
@@ -55,6 +146,14 @@
   color: var(--text-light);
   max-width: 560px;
   margin: 0 auto;
+}
+
+@media (min-width: 480px) {
+  .cardSecond,
+  .cardFirst,
+  .cardThird {
+    min-height: 260px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -69,11 +168,88 @@
   }
 
   .podium {
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--section-gap); /* Desktop: gap estándar entre columnas */
+    margin-top: 5rem; /* Solo desktop: evita que la card elevada solape el subtítulo */
     margin-bottom: 2rem;
+  }
+
+  /* Desktop: 3 columnas. Orden horizontal = 2º (izq) | 1º (centro) | 3º (der) */
+  .cardSecond {
+    order: 0;
+  }
+
+  .cardFirst {
+    order: 1;
+    align-self: start; /* No estirar: misma altura que el contenido, no igualar al resto */
+    margin-top: -1.5rem; /* La card del 1er premio se desplaza hacia arriba (solo desktop) */
+  }
+
+  .cardThird {
+    order: 2;
+  }
+
+  .cardSecond,
+  .cardFirst,
+  .cardThird {
+    min-height: 320px;
+  }
+
+  .prizeBadge {
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  .docIcon {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .docTitle {
+    font-size: 1.1875rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .downloadButton {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
   }
 
   .note {
     font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .podium {
+    max-width: 1020px;
+    margin-top: 5.5rem; /* Más espacio al aumentar el desplazamiento de la card central */
+  }
+
+  .cardSecond,
+  .cardFirst,
+  .cardThird {
+    min-height: 360px;
+  }
+
+  .cardFirst {
+    margin-top: -2rem; /* Un poco más de desplazamiento hacia arriba en pantallas grandes */
+  }
+
+  .prizeBadge {
+    padding: 0.45rem 1.125rem;
+    font-size: 0.8125rem;
+  }
+
+  .docIcon {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .docTitle {
+    font-size: 1.25rem;
   }
 }

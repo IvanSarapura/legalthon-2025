@@ -1,7 +1,9 @@
-import type { ButtonHTMLAttributes } from "react";
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 import styles from "./Button.module.css";
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
+    Pick<AnchorHTMLAttributes<HTMLAnchorElement>, "target" | "rel"> {
   variant?: "primary" | "secondary";
   as?: "button" | "a";
   href?: string;
@@ -12,6 +14,8 @@ export function Button({
   variant = "primary",
   as = "button",
   href,
+  target,
+  rel,
   children,
   className = "",
   ...rest
@@ -20,7 +24,13 @@ export function Button({
 
   if (as === "a" && href) {
     return (
-      <a className={classNames} href={href} {...(rest as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>
+      <a
+        className={classNames}
+        href={href}
+        target={target}
+        rel={rel}
+        {...(rest as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+      >
         {children}
       </a>
     );

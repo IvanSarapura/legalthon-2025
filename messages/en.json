@@ -33,9 +33,23 @@
   "finalDocuments": {
     "title": "Final Documents",
     "subtitle": "Access the research papers resulting from the Hackathon.",
+    "doc1Title": "National digital identity and informational sovereignty",
+    "doc2Title": "Blockchain as a technology applicable to the chain of custody",
+    "doc3Title": "Viability of Blockchain Technology in the Argentine Context",
+    "viewOnline": "VIEW ONLINE",
+    "downloadLabel": "Download document",
     "place1": "1st place",
     "place2": "2nd place",
     "place3": "3rd place",
+    "prizeBadge1": "1ST PRIZE",
+    "prizeBadge2": "2ND PRIZE",
+    "prizeBadge3": "3RD PRIZE",
+    "doc1ViewUrl": "/documents/Paper 02 Identidad digital nacional y soberania informativa.pdf",
+    "doc2ViewUrl": "/documents/Paper 01 La blockchain como tecnologia aplicable a la cadena de custodia.pdf",
+    "doc3ViewUrl": "/documents/Paper 03 Viabilidad de la Tecnología Blockchain en el Contexto Argentino Certificación Digital.pdf",
+    "doc1DownloadUrl": "/documents/Paper 02 Identidad digital nacional y soberania informativa.pdf",
+    "doc2DownloadUrl": "/documents/Paper 01 La blockchain como tecnologia aplicable a la cadena de custodia.pdf",
+    "doc3DownloadUrl": "/documents/Paper 03 Viabilidad de la Tecnología Blockchain en el Contexto Argentino Certificación Digital.pdf",
     "note": "Note: Documents are Open Source under Apache 2.0 license with express signed consent from authors and organizers."
   },
   "eventHighlights": {
