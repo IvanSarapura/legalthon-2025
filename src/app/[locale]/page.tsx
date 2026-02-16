@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import {
   HeroSection,
   InnovationPathSection,
@@ -5,9 +6,14 @@ import {
   EventHighlightsSection,
   OrganizersSection,
 } from "@/components/sections";
-import styles from "./page.module.css";
+import styles from "../page.module.css";
 
-export default function Home() {
+type Props = { params: Promise<{ locale: string }> };
+
+export default async function HomePage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>

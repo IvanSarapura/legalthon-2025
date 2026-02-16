@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "title": "Legalthon 2025 | Resultados",
+    "description": "Resultados del Hackathon Académico sobre materias Jurídicas de la Blockchain. Facultad de Derecho (UBA), Comunidad Cardano, FinGurú, Project Catalyst."
+  },
+  "nav": {
+    "languageSwitch": "Cambiar idioma",
+    "es": "ES",
+    "en": "EN"
+  },
+  "hero": {
+    "titleLine1": "RESULTADOS",
+    "titleLine2": "LEGALTHON 2025",
+    "subtitle": "Hackathon Académico sobre materias Jurídicas de la Blockchain.",
+    "partners": "Facultad de Derecho (UBA) • Comunidad Cardano • FinGurú • Project Catalyst",
+    "ctaDocuments": "VER DOCUMENTOS FINALES",
+    "ariaLabel": "Resultados Legalthon 2025"
+  },
+  "innovationPath": {
+    "title": "El Camino de la Innovación",
+    "card1": "Card 1",
+    "card2": "Card 2",
+    "card3": "Card 3",
+    "card4": "Card 4"
+  },
+  "finalDocuments": {
+    "title": "Documentos Finales",
+    "subtitle": "Accede a los trabajos de investigación resultantes del Hackathon.",
+    "place1": "1er puesto",
+    "place2": "2º puesto",
+    "place3": "3er puesto",
+    "note": "Nota: Los documentos son Open Source con licencia Apache 2.0 bajo consentimiento expreso y firmado de los autores y organizadores."
+  },
+  "eventHighlights": {
+    "title": "HIGHLIGHTS DEL EVENTO",
+    "carouselPlaceholder": "Carrusel de imágenes (próximamente)",
+    "ctaAlbum": "VER ÁLBUM COMPLETO"
+  },
+  "organizers": {
+    "organize": "ORGANIZAN",
+    "support": "APOYA",
+    "cardano": "Cardano",
+    "uba": "UBA",
+    "finguru": "FinGurú",
+    "catalyst": "Project Catalyst",
+    "copyright": "© 2025 Legalthon"
+  }
+}

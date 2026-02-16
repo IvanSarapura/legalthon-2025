@@ -1,7 +1,10 @@
+import { getTranslations } from "next-intl/server";
 import { Card } from "@/components/ui";
 import styles from "./FinalDocumentsSection.module.css";
 
-export function FinalDocumentsSection() {
+export async function FinalDocumentsSection() {
+  const t = await getTranslations("finalDocuments");
+
   return (
     <section
       id="documentos-finales"
@@ -9,26 +12,21 @@ export function FinalDocumentsSection() {
       aria-labelledby="documents-title"
     >
       <h2 id="documents-title" className={styles.title}>
-        Documentos Finales
+        {t("title")}
       </h2>
-      <p className={styles.subtitle}>
-        Accede a los trabajos de investigación resultantes del Hackathon.
-      </p>
+      <p className={styles.subtitle}>{t("subtitle")}</p>
       <div className={styles.podium}>
         <Card variant="podium" className={styles.cardSecond}>
-          <span className={styles.placeholder}>2º puesto</span>
+          <span className={styles.placeholder}>{t("place2")}</span>
         </Card>
         <Card variant="podium" className={styles.cardFirst}>
-          <span className={styles.placeholder}>1er puesto</span>
+          <span className={styles.placeholder}>{t("place1")}</span>
         </Card>
         <Card variant="podium" className={styles.cardThird}>
-          <span className={styles.placeholder}>3er puesto</span>
+          <span className={styles.placeholder}>{t("place3")}</span>
         </Card>
       </div>
-      <p className={styles.note}>
-        Nota: Los documentos son Open Source con licencia Apache 2.0 bajo consentimiento
-        expreso y firmado de los autores y organizadores.
-      </p>
+      <p className={styles.note}>{t("note")}</p>
     </section>
   );
 }
