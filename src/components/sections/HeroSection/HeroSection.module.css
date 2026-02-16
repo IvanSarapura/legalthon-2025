@@ -80,10 +80,13 @@
   line-height: 1;
   min-height: 48px;
   padding: 0.875rem 2rem;
+  transition: box-shadow 0.3s ease, filter 0.3s ease;
 }
 
 .cta:hover {
-  filter: brightness(0.9);
+  background-color: var(--primary);
+  filter: brightness(1.08);
+  box-shadow: 0 0 20px var(--primary-glow, rgba(165, 255, 0, 0.5));
 }
 
 @media (min-width: 768px) {

@@ -28,6 +28,11 @@
   align-items: center;
   text-align: center;
   width: 100%;
+  transition: border-color 0.25s ease;
+}
+
+.card:hover {
+  border-color: var(--primary);
 }
 
 .cardIcon {
@@ -66,6 +71,12 @@
   margin-bottom: 1rem;
   font-size: 0.9375rem;
   align-self: center;
+}
+
+.cardButton:hover {
+  background: var(--surface-hover);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .videoPlaceholder {

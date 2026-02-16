@@ -54,6 +54,19 @@
   align-items: center;
   justify-content: center;
   padding-top: 1.5rem;
+  transition: border-color 0.25s ease;
+}
+
+.cardSecond:hover {
+  border-color: #c0c0c0; /* Plata */
+}
+
+.cardFirst:hover {
+  border-color: #d4af37; /* Oro */
+}
+
+.cardThird:hover {
+  border-color: #cd7f32; /* Bronce */
 }
 
 /* Píldora de premio: centrada en el borde superior, 50% fuera de la card (no clicable) */
@@ -68,9 +81,11 @@
   line-height: 1.2;
   letter-spacing: 0.02em;
   border-radius: 9999px;
+  border: 2px solid transparent;
   white-space: nowrap;
   pointer-events: none;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transition: border-color 0.25s ease;
 }
 
 .prizeBadgeFirst {
@@ -78,14 +93,26 @@
   color: #1a1a1a;
 }
 
+.cardFirst:hover .prizeBadgeFirst {
+  border-color: #f0d875; /* Oro más claro */
+}
+
 .prizeBadgeSecond {
   background: #c0c0c0;
   color: #1a1a1a;
 }
 
+.cardSecond:hover .prizeBadgeSecond {
+  border-color: #e8e8e8; /* Plata más clara */
+}
+
 .prizeBadgeThird {
   background: #cd7f32;
   color: #1a1a1a;
+}
+
+.cardThird:hover .prizeBadgeThird {
+  border-color: #e5a855; /* Bronce más claro */
 }
 
 .docIcon {
@@ -121,6 +148,12 @@
   padding-top: 0;
   padding-bottom: 0;
   align-items: center;
+}
+
+.viewButton:hover {
+  background: var(--surface-hover);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .downloadButton {
