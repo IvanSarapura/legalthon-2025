@@ -18,10 +18,17 @@
   },
   "innovationPath": {
     "title": "El Camino de la Innovación",
-    "card1": "Card 1",
-    "card2": "Card 2",
-    "card3": "Card 3",
-    "card4": "Card 4"
+    "card1Title": "1. EL PROPÓSITO",
+    "card1Body": "Cardano y el ecosistema blockchain dependen de una investigación robusta para madurar. Para llenar este vacío, la Comunidad Cardano, la Facultad de Derecho (UBA) y FinGurú unieron fuerzas, generando un espacio académico y abierto a la innovación para elevar el estándar del debate jurídico en el uso de estas tecnologías.",
+    "card2Title": "2. EL LEGALTHON",
+    "card2Body": "Un evento masivo y vibrante: 93 registrados, 8 equipos presentando propuestas y una jornada de 12 horas con paneles de expertos y speakers internacionales. Ante un jurado de excelencia, se seleccionaron 3 equipos ganadores por la calidad de sus propuestas.",
+    "card2ButtonLabel": "UBA Institucional",
+    "card2ButtonUrl": "https://www.derecho.uba.ar/institucional/deinteres/2025/legalthon-hackathon-academico-de-gobernanza-descentralizada",
+    "card3Title": "3. LA INVESTIGACIÓN",
+    "card3Body": "No terminó en la premiación. Gracias al financiamiento de Project Catalyst, los equipos trabajaron durante meses junto a mentores especializados, transformando sus pitches iniciales en papers académicos con rigor metodológico y profundidad teórica.",
+    "card4Title": "4. EL LEGADO",
+    "card4Body": "El resultado es conocimiento libre y tangible. Estos documentos, licenciados bajo Apache 2.0, son un aporte concreto desde Argentina para enriquecer el entendimiento legal global de la tecnología Blockchain.",
+    "videoPlaceholder": "Vídeo (próximamente)"
   },
   "finalDocuments": {
     "title": "Documentos Finales",

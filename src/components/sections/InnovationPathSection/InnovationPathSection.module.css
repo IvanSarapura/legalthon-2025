@@ -1,4 +1,4 @@
-/* Mobile first: base = móvil, mejoras con min-width */
+/* Mobile first: base = móvil. Desktop: fila 1 = cards 1,2,3; fila 2 = card 4 solo en columna central (mismo ancho, centrada) */
 .section {
   padding: var(--section-padding-block) var(--section-padding-inline) var(--section-padding-block-end);
   background-color: var(--section-alt-bg, #f8f8f8);
@@ -20,21 +20,82 @@
   margin: 0 auto;
 }
 
+/* Cada card: contenido centrado, altura mínima para proporción vertical */
 .card {
-  min-height: 100px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
-.placeholder {
-  font-size: 0.875rem;
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-on-section-alt);
+  line-height: 1.25;
+  text-align: center;
+}
+
+.cardBody {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--text-tertiary);
+  margin-bottom: 1rem;
+  flex: 1;
+  text-align: center;
+}
+
+.cardBody:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Botón UBA: centrado, espaciado arriba (respecto al texto) y abajo (respecto al video) */
+.cardButton {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9375rem;
+  align-self: center;
+}
+
+.videoPlaceholder {
+  width: 100%;
+  margin-top: 1rem;
+  aspect-ratio: 16 / 9;
+  min-height: 140px;
+  border: 2px dashed var(--card-border);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+}
+
+/* Si el video va justo después del botón (card 2), no duplicar espaciado */
+.cardButton + .videoPlaceholder {
+  margin-top: 0;
+}
+
+.videoPlaceholderText {
+  font-size: 0.8125rem;
   color: var(--text-tertiary);
 }
 
+/* Tablet: 2 columnas (2x2) */
 @media (min-width: 480px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--section-gap);
+  }
+
+  .card {
+    min-height: 260px;
   }
 }
 
+/* Desktop: 3 columnas. Fila 1 = cards 1, 2, 3; fila 2 = card 4 (span completo) */
 @media (min-width: 768px) {
   .title {
     font-size: 2rem;
@@ -42,12 +103,43 @@
   }
 
   .grid {
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--section-gap);
+    max-width: 960px;
+  }
+
+  .card {
+    min-height: 320px;
+  }
+
+  .cardTitle {
+    font-size: 1.1875rem;
+  }
+
+  .cardBody {
+    font-size: 1rem;
+  }
+
+  /* Card 4: solo columna central (2 / 3) = mismo ancho que 1,2,3 y centrada en pantalla */
+  .cardFourth {
+    grid-column: 2 / 3;
   }
 }
 
 @media (min-width: 1024px) {
   .grid {
-    grid-template-columns: repeat(4, 1fr);
+    max-width: 1020px;
+  }
+
+  .card {
+    min-height: 360px;
+  }
+
+  .cardTitle {
+    font-size: 1.25rem;
+  }
+
+  .cardBody {
+    font-size: 1.0625rem;
   }
 }
