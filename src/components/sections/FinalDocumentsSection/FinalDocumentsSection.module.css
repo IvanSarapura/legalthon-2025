@@ -54,19 +54,22 @@
   align-items: center;
   justify-content: center;
   padding-top: 1.5rem;
-  transition: border-color 0.25s ease;
-}
-
-.cardSecond:hover {
-  border-color: #c0c0c0; /* Plata */
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .cardFirst:hover {
   border-color: #d4af37; /* Oro */
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.25);
+}
+
+.cardSecond:hover {
+  border-color: #c0c0c0; /* Plata */
+  box-shadow: 0 0 24px rgba(192, 192, 192, 0.35);
 }
 
 .cardThird:hover {
   border-color: #cd7f32; /* Bronce */
+  box-shadow: 0 0 24px rgba(205, 127, 50, 0.25);
 }
 
 /* Píldora de premio: centrada en el borde superior, 50% fuera de la card (no clicable) */
