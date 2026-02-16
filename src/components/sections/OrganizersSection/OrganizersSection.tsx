@@ -1,5 +1,4 @@
 import { getTranslations } from "next-intl/server";
-import { Card } from "@/components/ui";
 import styles from "./OrganizersSection.module.css";
 
 export async function OrganizersSection() {
@@ -7,29 +6,36 @@ export async function OrganizersSection() {
 
   return (
     <section className={styles.section} aria-labelledby="organizers-title">
-      <h2 id="organizers-title" className={styles.subtitle}>
+      <h2 id="organizers-title" className={styles.title}>
         {t("organize")}
       </h2>
-      <div className={styles.organizersGrid}>
-        <Card variant="small" className={styles.logoCard}>
-          <span className={styles.placeholder}>{t("cardano")}</span>
-        </Card>
-        <Card variant="small" className={styles.logoCard}>
-          <span className={styles.placeholder}>{t("uba")}</span>
-        </Card>
-        <Card variant="small" className={styles.logoCard}>
-          <span className={styles.placeholder}>{t("finguru")}</span>
-        </Card>
+      <div className={styles.logosRow} role="list" aria-label={t("organize")}>
+        <img
+          src="/images/cardano-logo.png"
+          alt={t("cardano")}
+          className={styles.logoImage}
+        />
+        <img
+          src="/images/uba-logo.png"
+          alt={t("uba")}
+          className={styles.logoImage}
+        />
+        <img
+          src="/images/finguru-logo.png"
+          alt={t("finguru")}
+          className={styles.logoImage}
+        />
       </div>
-      <h2 className={styles.subtitle}>{t("support")}</h2>
-      <div className={styles.supporter}>
-        <Card variant="small" className={styles.logoCard}>
-          <span className={styles.placeholder}>{t("catalyst")}</span>
-        </Card>
+      <h2 className={styles.title} id="support-title">
+        {t("support")}
+      </h2>
+      <div className={styles.supportLogo} aria-label={t("support")}>
+        <img
+          src="/images/catalyst-logo.png"
+          alt={t("catalyst")}
+          className={styles.logoImage}
+        />
       </div>
-      <footer className={styles.footer}>
-        <small>{t("copyright")}</small>
-      </footer>
     </section>
   );
 }

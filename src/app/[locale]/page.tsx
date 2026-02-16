@@ -6,6 +6,7 @@ import {
   EventHighlightsSection,
   OrganizersSection,
 } from "@/components/sections";
+import { Footer } from "@/components/layout";
 import styles from "../page.module.css";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -22,6 +23,7 @@ export default async function HomePage({ params }: Props) {
         <FinalDocumentsSection />
         <EventHighlightsSection />
         <OrganizersSection />
+        <Footer />
       </main>
     </div>
   );

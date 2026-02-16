@@ -1,0 +1,13 @@
+/* Mismo padding que .nav del Navbar para evitar layout shift */
+.placeholder {
+  padding: var(--section-padding-inline);
+  padding-block: 0.75rem;
+  min-height: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .placeholder {
+    padding-block: 1rem;
+    min-height: 3rem;
+  }
+}
