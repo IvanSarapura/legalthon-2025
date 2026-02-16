@@ -92,9 +92,28 @@
   background-color: var(--background);
 }
 
-/* Si el video va justo después del botón (card 2), no duplicar espaciado */
-.cardButton + .videoPlaceholder {
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 1rem;
+  aspect-ratio: 16 / 9;
+  min-height: 140px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: var(--background);
+}
+
+.cardButton + .videoWrapper {
   margin-top: 0;
+}
+
+.videoIframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 0.5rem;
 }
 
 .videoPlaceholderText {

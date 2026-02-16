@@ -37,7 +37,11 @@
     "card3Body": "No terminó en la premiación. Gracias al financiamiento de Project Catalyst, los equipos trabajaron durante meses junto a mentores especializados, transformando sus pitches iniciales en papers académicos con rigor metodológico y profundidad teórica.",
     "card4Title": "4. EL LEGADO",
     "card4Body": "El resultado es conocimiento libre y tangible. Estos documentos, licenciados bajo Apache 2.0, son un aporte concreto desde Argentina para enriquecer el entendimiento legal global de la tecnología Blockchain.",
-    "videoPlaceholder": "Vídeo (próximamente)"
+    "videoPlaceholder": "Vídeo (próximamente)",
+    "videoCard2Id": "1165284496",
+    "videoCard3Id": "1165284369",
+    "videoCard2Title": "Legalthon institucional 1",
+    "videoCard3Title": "Legalthon institucional 2"
   },
   "finalDocuments": {
     "title": "Documentos Finales",

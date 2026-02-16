@@ -83,8 +83,15 @@ export async function InnovationPathSection() {
           >
             {t("card2ButtonLabel")}
           </Button>
-          <div className={styles.videoPlaceholder} aria-hidden="true">
-            <span className={styles.videoPlaceholderText}>{t("videoPlaceholder")}</span>
+          <div className={styles.videoWrapper}>
+            <iframe
+              src={`https://player.vimeo.com/video/${t("videoCard2Id")}`}
+              title={t("videoCard2Title")}
+              loading="lazy"
+              allow="fullscreen; picture-in-picture"
+              allowFullScreen
+              className={styles.videoIframe}
+            />
           </div>
         </Card>
 
@@ -92,8 +99,15 @@ export async function InnovationPathSection() {
           <MicroscopeIcon />
           <h3 className={styles.cardTitle}>{t("card3Title")}</h3>
           <p className={styles.cardBody}>{t("card3Body")}</p>
-          <div className={styles.videoPlaceholder} aria-hidden="true">
-            <span className={styles.videoPlaceholderText}>{t("videoPlaceholder")}</span>
+          <div className={styles.videoWrapper}>
+            <iframe
+              src={`https://player.vimeo.com/video/${t("videoCard3Id")}`}
+              title={t("videoCard3Title")}
+              loading="lazy"
+              allow="fullscreen; picture-in-picture"
+              allowFullScreen
+              className={styles.videoIframe}
+            />
           </div>
         </Card>
 
