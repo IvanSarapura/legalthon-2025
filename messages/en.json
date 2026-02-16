@@ -11,9 +11,9 @@
   "hero": {
     "titleLine1": "RESULTS",
     "titleLine2": "LEGALTHON 2025",
-    "subtitle": "Academic Hackathon on Legal Aspects of Blockchain.",
-    "partners": "Faculty of Law (UBA) • Cardano Community • FinGurú • Project Catalyst",
-    "ctaDocuments": "VIEW FINAL DOCUMENTS",
+    "subtitle": "Academic Hackathon on Legal Matters of Blockchain.",
+    "partners": "Law School (UBA) • Cardano Community • FinGurú • Project Catalyst",
+    "ctaDocuments": "VIEW FINAL PAPERS",
     "ariaLabel": "Legalthon 2025 Results"
   },
   "phraseCarousel": {
@@ -29,13 +29,13 @@
   "innovationPath": {
     "title": "The Path of Innovation",
     "card1Title": "1. THE PURPOSE",
-    "card1Body": "Cardano and the blockchain ecosystem depend on robust research to mature. To fill this gap, the Cardano Community, the Faculty of Law (UBA) and FinGurú joined forces, creating an academic space open to innovation to raise the standard of legal debate on the use of these technologies.",
+    "card1Body": "Cardano and the blockchain ecosystem depend on robust research to mature. To fill this gap, the Cardano Community, the UBA Law School, and FinGurú joined forces, creating an academic space open to innovation to raise the standard of legal debate regarding these technologies.",
     "card2Title": "2. THE LEGALTHON",
-    "card2Body": "A massive and vibrant event: 93 registered participants, 8 teams presenting proposals and a 12-hour day with expert panels and international speakers. Before an excellence jury, 3 winning teams were selected for the quality of their proposals.",
+    "card2Body": "A massive and vibrant event: 93 registered participants, 8 teams presenting proposals, and a 12-hour day with expert panels and international speakers. Before an excellence jury, 3 winning teams were selected based for the quality of their proposals.",
     "card2ButtonLabel": "UBA Institutional",
     "card2ButtonUrl": "https://www.derecho.uba.ar/institucional/deinteres/2025/legalthon-hackathon-academico-de-gobernanza-descentralizada",
     "card3Title": "3. THE RESEARCH",
-    "card3Body": "It did not end at the awards. Thanks to funding from Project Catalyst, the teams worked for months with specialized mentors, turning their initial pitches into academic papers with methodological rigor and theoretical depth.",
+    "card3Body": "It didn't end with the awards. Thanks to funding from Project Catalyst, the teams worked for months with specialized mentors, transforming their initial pitches into academic papers with methodological rigor and theoretical depth.",
     "card4Title": "4. THE LEGACY",
     "card4Body": "The result is free and tangible knowledge. These documents, licensed under Apache 2.0, are a concrete contribution from Argentina to enrich the global legal understanding of Blockchain technology.",
     "videoPlaceholder": "Video (coming soon)",
@@ -45,11 +45,11 @@
     "videoCard3Title": "Legalthon institutional 2"
   },
   "finalDocuments": {
-    "title": "Final Documents",
+    "title": "Final Papers",
     "subtitle": "Access the research papers resulting from the Hackathon.",
     "doc1Title": "National digital identity and informational sovereignty",
-    "doc2Title": "Blockchain as a technology applicable to the chain of custody",
-    "doc3Title": "Viability of Blockchain Technology in the Argentine Context",
+    "doc2Title": "Blockchain as a technology applicable to chain of custody",
+    "doc3Title": "Viability of blockchain technology in the argentine context",
     "viewOnline": "VIEW ONLINE",
     "downloadLabel": "Download document",
     "place1": "1st place",
@@ -64,7 +64,7 @@
     "doc1DownloadUrl": "/documents/Paper 02 Identidad digital nacional y soberania informativa.pdf",
     "doc2DownloadUrl": "/documents/Paper 01 La blockchain como tecnologia aplicable a la cadena de custodia.pdf",
     "doc3DownloadUrl": "/documents/Paper 03 Viabilidad de la Tecnología Blockchain en el Contexto Argentino Certificación Digital.pdf",
-    "note": "Note: Documents are Open Source under Apache 2.0 license with express signed consent from authors and organizers."
+    "note": "Note: The documents are Open Source under Apache 2.0 license with express signed consent from authors and organizers."
   },
   "eventHighlights": {
     "title": "EVENT HIGHLIGHTS",
@@ -77,7 +77,7 @@
     "carouselSlideLabel": "Image {current} of {total}"
   },
   "organizers": {
-    "organize": "ORGANIZED BY",
+    "organize": "ORGANIZERS",
     "support": "SUPPORTED BY",
     "cardano": "Cardano",
     "uba": "UBA",
