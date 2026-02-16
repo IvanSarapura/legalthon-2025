@@ -16,6 +16,15 @@
     "ctaDocuments": "VER DOCUMENTOS FINALES",
     "ariaLabel": "Resultados Legalthon 2025"
   },
+  "phraseCarousel": {
+    "ariaLabel": "Frases destacadas",
+    "trazabilidad": "Trazabilidad",
+    "notYourKeys": "Not your keys, not your coins",
+    "inmutabilidad": "Inmutabilidad",
+    "gobernanzaDescentralizada": "Gobernanza descentralizada",
+    "identidadSoberana": "Identidad soberana",
+    "researchFirst": "Investigación primero"
+  },
   "innovationPath": {
     "title": "El Camino de la Innovación",
     "card1Title": "1. EL PROPÓSITO",

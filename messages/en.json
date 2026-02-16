@@ -16,6 +16,15 @@
     "ctaDocuments": "VIEW FINAL DOCUMENTS",
     "ariaLabel": "Legalthon 2025 Results"
   },
+  "phraseCarousel": {
+    "ariaLabel": "Highlighted phrases",
+    "trazabilidad": "Traceability",
+    "notYourKeys": "Not your keys, not your coins",
+    "inmutabilidad": "Immutability",
+    "gobernanzaDescentralizada": "Decentralized governance",
+    "identidadSoberana": "Sovereign identity",
+    "researchFirst": "Research first"
+  },
   "innovationPath": {
     "title": "The Path of Innovation",
     "card1Title": "1. THE PURPOSE",

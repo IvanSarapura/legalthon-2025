@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import {
   HeroSection,
+  PhraseCarouselSection,
   InnovationPathSection,
   FinalDocumentsSection,
   EventHighlightsSection,
@@ -19,6 +20,7 @@ export default async function HomePage({ params }: Props) {
     <div className={styles.page}>
       <main className={styles.main}>
         <HeroSection />
+        <PhraseCarouselSection />
         <InnovationPathSection />
         <FinalDocumentsSection />
         <EventHighlightsSection />

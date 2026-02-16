@@ -1,0 +1,68 @@
+/* Carrusel de frases: fondo verde primary, texto negro, scroll horizontal finito en loop */
+.section {
+  background-color: var(--primary);
+  padding: 0.75rem 0;
+  overflow: hidden;
+}
+
+.viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.sectionPaused .track {
+  animation-play-state: paused;
+}
+
+.track {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0;
+  padding: 0 2rem;
+  animation: phraseScroll 25s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}
+
+/* Una vuelta = 1/5 del track (5 copias) para loop suave */
+@keyframes phraseScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-20%);
+  }
+}
+
+.phrase {
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.separator {
+  color: #000;
+  font-size: 0.9em;
+  font-weight: 700;
+  margin: 0 1.5rem;
+  opacity: 0.85;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 0.9rem 0;
+  }
+
+  .phrase {
+    font-size: 1.125rem;
+  }
+}
