@@ -29,20 +29,21 @@
   color: var(--text-tertiary);
 }
 
-/* Carrusel: 4 imágenes visibles, scroll horizontal continuo e infinito.
-   Proporción rectangular (3:2 por celda) para no deformar las fotos. */
+/* Carrusel: mobile first 2 imágenes visibles, desktop (768px+) 4 imágenes.
+   Proporción rectangular por celda para no deformar las fotos. */
 .carousel {
   margin-bottom: 1.5rem;
   overflow: hidden;
   background-color: var(--card-bg);
+  --carousel-slide-vw: 50; /* móvil: 2 visibles (50vw cada una) */
 }
 
-/* 6:1 = 4 celdas de 3:2 → fotos pequeñas y en escala correcta */
+/* Móvil: 2 celdas 3:2 → aspect-ratio 3/1. Desktop: 4 celdas → 6/1 */
 .carouselViewport {
   position: relative;
   width: 100%;
   overflow: hidden;
-  aspect-ratio: 6 / 1;
+  aspect-ratio: 3 / 1;
 }
 
 .carouselTrack {
@@ -50,26 +51,24 @@
   flex-direction: row;
   height: 100%;
   will-change: transform;
-  /* Ancho explícito = (número de imágenes) × 2 (duplicado) × 25vw por slide */
   width: max-content;
 }
 
 .carouselTrackContinuous {
-  animation: carouselScroll 120s linear infinite; /* Aumentado de 90s a 120s */
+  animation: carouselScroll 120s linear infinite;
 }
 
 .carouselTrackNoMotion {
   animation: none;
 }
 
-/* Distancia = una vuelta completa (--carousel-count slides × 25vw).
-   Sin vw, translateX(-50%) puede resolverse mal y el bucle se corta antes. */
+/* Distancia = una vuelta (--carousel-count × ancho por slide). --carousel-slide-vw define cuántas caben en 100vw. */
 @keyframes carouselScroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-1 * var(--carousel-count, 29) * 25vw));
+    transform: translateX(calc(-1 * var(--carousel-count, 29) * var(--carousel-slide-vw) * 1vw));
   }
 }
 
@@ -79,10 +78,10 @@
   }
 }
 
-/* Ancho fijo en vw para que 4 quepan en 100vw y la distancia de animación sea predecible */
+/* Mobile first: 50vw por slide (2 visibles). Desktop lo sobrescribe a 25vw (4 visibles). */
 .carouselSlide {
-  flex: 0 0 25vw;
-  width: 25vw;
+  flex: 0 0 calc(var(--carousel-slide-vw) * 1vw);
+  width: calc(var(--carousel-slide-vw) * 1vw);
   height: 100%;
   position: relative;
   min-width: 0;
@@ -120,5 +119,10 @@
 
   .carousel {
     margin-bottom: 2rem;
+    --carousel-slide-vw: 25; /* desktop: 4 visibles (25vw cada una) */
+  }
+
+  .carouselViewport {
+    aspect-ratio: 6 / 1;
   }
 }
