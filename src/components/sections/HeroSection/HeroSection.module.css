@@ -1,24 +1,62 @@
-/* Mobile first */
+/* Mobile first: base = móvil, mejoras con min-width */
 .section {
-  padding: 2.5rem 1.25rem 3rem;
+  position: relative;
+  padding: 4rem var(--section-padding-inline) 4.5rem;
   text-align: center;
+  background-image: url("/JusticeGemini.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.75) 100%
+  );
+  pointer-events: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .section::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(10, 10, 10, 0.8) 0%,
+      rgba(10, 10, 10, 0.7) 100%
+    );
+  }
 }
 
 .wrapper {
+  position: relative;
+  z-index: 1;
   max-width: 720px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: var(--section-gap);
 }
 
 .title {
-  font-size: 1.75rem;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0.05em;
   color: var(--foreground);
+}
+
+.titleLine1,
+.titleLine2 {
+  display: block;
+}
+
+.titleLine2 {
+  color: var(--primary);
 }
 
 .subtitle {
@@ -28,38 +66,40 @@
   color: var(--text-secondary, #555);
 }
 
-.partners {
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: var(--text-tertiary, #666);
-}
-
+/* Mismo aspecto en móvil y desktop: tipografía y padding unificados */
 .cta {
   margin-top: 0.5rem;
+  background-color: var(--primary);
+  color: var(--background);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1;
+  min-height: 48px;
+  padding: 0.875rem 2rem;
+}
+
+.cta:hover {
+  filter: brightness(0.9);
 }
 
 @media (min-width: 768px) {
   .section {
-    padding: 4rem 1.5rem 5rem;
+    padding: 8rem var(--section-padding-inline) 8rem;
   }
 
   .wrapper {
-    gap: 1.25rem;
+    gap: var(--section-gap);
   }
 
   .title {
-    font-size: 2.5rem;
+    font-size: 4.5rem;
   }
 
   .subtitle {
     font-size: 1.25rem;
   }
 
-  .partners {
-    font-size: 1rem;
-  }
-
   .cta {
-    margin-top: 0.75rem;
+    margin-top: 1.25rem;
   }
 }
