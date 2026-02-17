@@ -2,44 +2,78 @@
 
 Sitio web de presentación de los **resultados del Legalthon 2025**: Hackathon Académico sobre aspectos jurídicos de la Blockchain, organizado por la Facultad de Derecho (UBA), la Comunidad Cardano, FinGurú y financiado por Project Catalyst.
 
+---
+
 ## De qué trata la página
 
-La página muestra de forma ordenada el propósito del evento, el desarrollo del Legalthon, el proceso de investigación posterior y el legado en forma de documentos finales. Está pensada para que visitantes, académicos y la comunidad blockchain conozcan los resultados y accedan a los papers y al álbum del evento.
+La página presenta de forma ordenada el propósito del evento, el desarrollo del Legalthon, la investigación con tutoría, la ceremonia de cierre y el legado en documentos finales. Está pensada para que visitantes, académicos y la comunidad blockchain conozcan los resultados y accedan a los papers (Apache 2.0) y al álbum de fotos del evento.
 
-## Principales funcionalidades
+---
 
-- **Hero** — Portada con título “Resultados Legalthon 2025”, subtítulo, socios y botón principal “Ver documentos finales” que lleva a la sección de papers. Incluye estrellitas animadas en CSS sobre la imagen de fondo.
+## Estructura del proyecto
 
-- **Carrusel de frases** — Franja verde con frases destacadas del ecosistema (trazabilidad, inmutabilidad, consenso, “Don’t trust, verify”, “The code is law”, etc.) en un carrusel infinito horizontal.
+- **`src/app/`** — App Router de Next.js: `layout.tsx` (raíz), `[locale]/layout.tsx` (i18n + navbar + hijos), `[locale]/page.tsx` (página principal que compone las secciones).
+- **`src/components/sections/`** — Secciones de la landing: Hero, PhraseCarousel, InnovationPath, FinalDocuments, EventHighlights, Organizers.
+- **`src/components/layout/`** — Navbar (client-only con spacer para evitar layout shift), Footer, HtmlLang.
+- **`src/components/ui/`** — Button, Card (variants: default, podium, small).
+- **`src/i18n/`** — `routing.ts` (locales `es`/`en`, prefijo siempre), `request.ts` (carga de mensajes por locale).
+- **`messages/`** — `es.json` y `en.json` con todos los textos por namespace (metadata, nav, hero, phraseCarousel, innovationPath, finalDocuments, eventHighlights, organizers).
+- **`public/`** — Imágenes (hero, logos de organizadores, fotos del evento), iconos SVG (write-logo, handshake-logo, winer-logo).
+- **`src/data/`** — `highlightsImages.ts`: lista de nombres de imágenes del carrusel de highlights y ruta base.
 
-- **El camino de la innovación** — Cuatro bloques (Propósito, Legalthon, Investigación, Legado) con textos, enlace institucional UBA, y vídeos embebidos de Vimeo.
+---
 
-- **Documentos finales** — Tres papers ganadores con lugar (1.º, 2.º, 3.º), enlaces para ver online y descargar en PDF (licencia Apache 2.0).
+## Secciones y funcionalidades
 
-- **Destacados del evento** — Carrusel de fotos del evento y botón “Ver álbum completo” que enlaza al álbum en Google Drive.
+| Sección | Descripción |
+|--------|-------------|
+| **Hero** | Portada con título “Resultados Legalthon 2025”, subtítulo, socios y CTA “Ver documentos finales” (ancla a documentos). Fondo con imagen y estrellitas animadas en CSS.
+| **Carrusel de frases** | Franja verde con frases del ecosistema (trazabilidad, “Not your keys…”, inmutabilidad, gobernanza, identidad soberana, consenso, innovación, “The code is law”, auditable, “Don’t trust, verify”) en carrusel infinito horizontal. |
+| **El camino de la innovación** | **Seis cards** en grid (móvil 1 columna, tablet 2, desktop 3 columnas × 2 filas): 1. El propósito, 2. El Legalthon (enlace UBA + vídeo Vimeo), 3. La investigación (vídeo), 4. La tutoría (icono handshake), 5. La ceremonia (icono winer), 6. El legado. Cards con mismo estilo y transición al hover. |
+| **Documentos finales** | Tres papers ganadores (1.º, 2.º, 3.º) con títulos, enlaces “Ver online” y descarga en PDF; nota sobre licencia Apache 2.0. |
+| **Destacados del evento** | Carrusel de fotos (lista en `highlightsImages.ts`) y botón “Ver álbum completo” (Google Drive). Controles de reproducción/pausa y accesibilidad. |
+| **Organizadores y apoyo** | Logos de Cardano, UBA (Facultad de Derecho), FinGurú y Project Catalyst con enlaces a sus sitios web oficiales. |
+| **Footer** | Copyright. |
 
-- **Organizadores y apoyo** — Logos de Cardano, UBA (Facultad de Derecho), FinGurú y Project Catalyst, con enlaces a sus sitios oficiales.
+- **Navegación** — Barra fija con cambio de idioma (ES/EN). Navbar se monta en cliente.
+- **Internacionalización** — Español (por defecto) e inglés; rutas con prefijo (`/es`, `/en`). next-intl para mensajes y metadatos.
 
-- **Internacionalización (i18n)** — Soporte para **español** e **inglés** con next-intl; el usuario puede cambiar el idioma desde la barra de navegación.
+---
 
 ## Tecnologías
 
-- [Next.js](https://nextjs.org) (App Router)
-- [next-intl](https://next-intl-docs.vercel.app/) para i18n
-- CSS Modules para estilos
+| Dependencia | Uso |
+|-------------|-----|
+| **Next.js** (16.x) | App Router, SSG/SSR, generación de rutas por locale. |
+| **React** (19.x) | Componentes y hooks. |
+| **next-intl** (4.x) | i18n: mensajes, rutas localizadas, `getTranslations` / `useTranslations`. |
+| **TypeScript** | Tipado en todo el proyecto. |
+| **CSS Modules** | Estilos por componente (`.module.css`). |
 
-## Cómo ejecutar el proyecto
+- **Estilos** — Variables CSS en `globals.css` (breakpoints, colores, espaciado). Tema con `--primary` verde y soporte `prefers-color-scheme: dark` donde aplica.
+- **Config** — `next.config.ts` con plugin `next-intl` y React Compiler.
+
+---
+
+## Cómo ejecutar
 
 ```bash
 npm install
 npm run dev
 ```
 
-Abre [http://localhost:3000](http://localhost:3000). La app redirige al locale por defecto (por ejemplo `/es` o `/en` según la configuración).
+Abre [http://localhost:3000](http://localhost:3000); la app redirige al locale por defecto (`/es`).
+
+- **Build:** `npm run build`
+- **Lint:** `npm run lint`
+
+---
 
 ## Despliegue
 
-El proyecto está preparado para desplegarse en [Vercel](https://vercel.com). No requiere configuración de `.htaccess` ni reglas de reescritura tipo SPA; Next.js gestiona las rutas y los locales.
+El proyecto está preparado para [Vercel](https://vercel.com). Next.js gestiona rutas y locales; no se requiere `.htaccess` ni reglas de reescritura tipo SPA.
+
+---
 
 ## Página original
 
