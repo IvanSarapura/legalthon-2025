@@ -1,4 +1,4 @@
-/* Mobile first */
+/* Base móvil. */
 .section {
   position: relative;
   padding: var(--section-padding-block) var(--section-padding-inline) var(--section-padding-block-end);
@@ -107,7 +107,7 @@
   transition: opacity 0.25s ease;
 }
 
-/* Asegurar que next/image respete object-fit */
+/* next/image: forzar object-fit. */
 .logoImage img {
   object-fit: contain;
 }

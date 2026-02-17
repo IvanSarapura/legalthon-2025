@@ -1,4 +1,4 @@
-/* Carrusel de frases: fondo verde primary, texto negro, scroll horizontal finito en loop */
+/* Fondo verde, texto negro, scroll horizontal en loop. */
 .section {
   background-color: var(--primary);
   padding: 0.75rem 0;
@@ -30,7 +30,7 @@
   }
 }
 
-/* Una vuelta = 1/5 del track (5 copias) para loop suave */
+/* 5 copias del contenido para loop continuo. */
 @keyframes phraseScroll {
   0% {
     transform: translateX(0);

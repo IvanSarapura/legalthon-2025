@@ -1,0 +1,147 @@
+/* Design tokens: --ds-* (valores base), --color-* / --space-* (semánticos).
+   Aliases legacy (--primary, --background, etc.) se mantienen por compatibilidad. */
+
+:root {
+  /* Breakpoints */
+  --ds-bp-sm: 480px;
+  --ds-bp-md: 768px;
+  --ds-bp-lg: 1024px;
+
+  /* Escala de espaciado (rem) */
+  --ds-space-0: 0;
+  --ds-space-1: 0.25rem;
+  --ds-space-2: 0.5rem;
+  --ds-space-3: 0.75rem;
+  --ds-space-4: 1rem;
+  --ds-space-5: 1.25rem;
+  --ds-space-6: 1.5rem;
+  --ds-space-8: 2rem;
+  --ds-space-10: 2.5rem;
+  --ds-space-12: 3rem;
+  --ds-space-16: 4rem;
+  --ds-space-20: 5rem;
+
+  /* Border radius */
+  --ds-radius-1: 0.25rem;
+  --ds-radius-2: 0.5rem;
+  --ds-radius-3: 0.75rem;
+  --ds-radius-pill: 9999px;
+
+  /* Tipografía */
+  --ds-font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+
+  /* Marca */
+  --ds-color-brand-primary: #a5ff00;
+  --ds-color-brand-primary-glow: #a5ff004d;
+  --ds-color-brand-secondary: #00baa8;
+
+  /* Neutros (tema oscuro por defecto) */
+  --ds-color-neutral-950: #050505;
+  --ds-color-neutral-900: #0a0a0a;
+  --ds-color-neutral-850: #111111;
+  --ds-color-neutral-800: #141414;
+  --ds-color-neutral-700: #1a1a1a;
+  --ds-color-neutral-300: #a0a0a0;
+  --ds-color-neutral-200: #b0b0b0;
+  --ds-color-neutral-150: #999999;
+  --ds-color-neutral-050: #ededed;
+  --ds-color-white: #ffffff;
+
+  /* Layout */
+  --max-width: 1200px;
+
+  /* Colores semánticos */
+  --color-bg: var(--ds-color-neutral-950);
+  --color-surface: var(--ds-color-neutral-850);
+  --color-surface-hover: var(--ds-color-neutral-700);
+  --color-text: var(--ds-color-white);
+  --color-text-muted: var(--ds-color-neutral-300);
+  --color-text-secondary: var(--ds-color-neutral-200);
+  --color-text-tertiary: var(--ds-color-neutral-150);
+  --color-border: #2a2a2a;
+
+  --color-brand-primary: var(--ds-color-brand-primary);
+  --color-brand-primary-glow: var(--ds-color-brand-primary-glow);
+  --color-brand-secondary: var(--ds-color-brand-secondary);
+
+  --color-section-alt-bg: var(--ds-color-neutral-850);
+  --color-card-bg: var(--ds-color-neutral-800);
+  --color-card-border: #2a2a2a;
+  --color-text-on-section-alt: var(--color-text);
+
+  /* Espaciado de secciones */
+  --space-section-padding-block: var(--ds-space-10);
+  --space-section-padding-block-end: var(--ds-space-12);
+  --space-section-padding-inline: var(--ds-space-5);
+  --space-section-gap: var(--ds-space-4);
+
+  /* Aliases usados por CSS Modules (no eliminar) */
+  --bp-sm: var(--ds-bp-sm);
+  --bp-md: var(--ds-bp-md);
+  --bp-lg: var(--ds-bp-lg);
+
+  --section-padding-block: var(--space-section-padding-block);
+  --section-padding-block-end: var(--space-section-padding-block-end);
+  --section-padding-inline: var(--space-section-padding-inline);
+  --section-gap: var(--space-section-gap);
+
+  --primary: var(--color-brand-primary);
+  --primary-glow: var(--color-brand-primary-glow);
+  --secondary: var(--color-brand-secondary);
+
+  --background: var(--color-bg);
+  --surface: var(--color-surface);
+  --surface-hover: var(--color-surface-hover);
+
+  --text-main: var(--color-text);
+  --text-light: var(--color-text-muted);
+  --text-secondary: var(--color-text-secondary);
+  --text-tertiary: var(--color-text-tertiary);
+
+  --foreground: var(--ds-color-white);
+  --section-alt-bg: var(--color-section-alt-bg);
+  --card-bg: var(--color-card-bg);
+  --card-border: var(--color-card-border);
+  --text-on-section-alt: var(--color-text-on-section-alt);
+
+  --color-foreground: var(--color-text);
+  --color-primary: #171717;
+  --color-primary-text: #fff;
+  --color-primary-hover: #383838;
+  --color-secondary-hover: #1f1f1f;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --space-section-padding-block: var(--ds-space-16);
+    --space-section-padding-block-end: var(--ds-space-20);
+    --space-section-padding-inline: var(--ds-space-6);
+    --space-section-gap: 1.25rem;
+  }
+}
+
+/* Tema claro (prefers-color-scheme: light) */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg: #ffffff;
+    --color-surface: #f8f8f8;
+    --color-surface-hover: #f0f0f0;
+    --color-text: #171717;
+    --color-text-muted: #555555;
+    --color-text-secondary: #666666;
+    --color-text-tertiary: #777777;
+    --color-border: #e5e5e5;
+
+    --color-section-alt-bg: #f8f8f8;
+    --color-card-bg: #ffffff;
+    --color-card-border: #e5e5e5;
+    --color-text-on-section-alt: #171717;
+
+    --foreground: #171717;
+    --color-foreground: #171717;
+
+    --color-secondary-hover: #f5f5f5;
+  }
+}
+

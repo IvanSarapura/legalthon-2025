@@ -1,4 +1,4 @@
-/* Mismo padding que .nav del Navbar para evitar layout shift */
+/* Mismo padding que .nav para evitar layout shift. */
 .placeholder {
   padding: var(--section-padding-inline);
   padding-block: 0.75rem;

@@ -4,14 +4,12 @@ import { useState, useEffect } from "react";
 import { Navbar } from "@/components/layout/Navbar/Navbar";
 import styles from "./ClientOnlyNavbar.module.css";
 
-/** Persiste entre remontajes (p. ej. cambio de idioma) para no mostrar placeholder de nuevo */
+/** Evita volver a mostrar el placeholder tras cambio de idioma. */
 let hasMountedOnce = false;
 
 /**
- * Envuelve el Navbar para que solo se monte en el cliente después del primer paint.
- * Evita el error "Can't perform a React state update on a component that hasn't mounted yet"
- * que puede ocurrir con next-intl (useLocale) durante el HMR en desarrollo.
- * Tras el primer montaje, en cambios de idioma se muestra el Navbar de inmediato para evitar saltos.
+ * Monta el Navbar solo en cliente tras el primer paint. Evita errores de next-intl (useLocale)
+ * con HMR y, tras el primer montaje, evita saltos al cambiar de idioma.
  */
 export function ClientOnlyNavbar() {
   const [mounted, setMounted] = useState(hasMountedOnce);

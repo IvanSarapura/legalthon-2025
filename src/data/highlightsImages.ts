@@ -1,9 +1,4 @@
-/**
- * Lista de imágenes del carrusel "Highlights del evento".
- * Rutas relativas a public/ (en el navegador: /images/...).
- * Orden de visualización en el carrusel.
- */
-/** Nombres exactos en disco (tras comprimir, algunas extensiones quedaron .jpg y otras .JPG). */
+/** Nombres de archivo en public/images; orden del carrusel. (Algunas .jpg, otras .JPG tras comprimir.) */
 export const HIGHLIGHTS_IMAGES = [
   "DSC00808.jpg",
   "DSC00854.jpg",
@@ -39,5 +34,5 @@ export const HIGHLIGHTS_IMAGES = [
 
 export type HighlightImageName = (typeof HIGHLIGHTS_IMAGES)[number];
 
-/** Ruta base en el sitio para las imágenes de highlights */
+/** Prefijo de ruta para las imágenes del carrusel. */
 export const HIGHLIGHTS_IMAGES_BASE = "/images";

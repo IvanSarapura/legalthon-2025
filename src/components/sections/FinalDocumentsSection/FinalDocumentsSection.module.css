@@ -1,4 +1,4 @@
-/* Mobile first: base = móvil, mejoras con min-width */
+/* Base móvil. */
 .section {
   position: relative;
   padding: var(--section-padding-block) var(--section-padding-inline) var(--section-padding-block-end);
@@ -82,13 +82,12 @@
 .podium {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.5rem; /* Mobile: más separación entre las 3 cards apiladas */
+  gap: 2.5rem;
   max-width: 960px;
   margin: 0 auto 1.5rem;
   align-items: stretch;
 }
 
-/* Mobile: una columna. Orden vertical = centro (1º) arriba, izq (2º), der (3º) abajo */
 .cardFirst {
   order: 0;
 }
@@ -101,7 +100,6 @@
   order: 2;
 }
 
-/* Mismo tamaño que cards de El camino de la innovación */
 .cardSecond,
 .cardFirst,
 .cardThird {
@@ -116,24 +114,24 @@
 }
 
 .cardFirst:hover {
-  border-color: #d4af37; /* Oro */
+  border-color: #d4af37;
   box-shadow: 0 0 24px rgba(212, 175, 55, 0.25);
   transform: translateY(-6px);
 }
 
 .cardSecond:hover {
-  border-color: #c0c0c0; /* Plata */
+  border-color: #c0c0c0;
   box-shadow: 0 0 24px rgba(192, 192, 192, 0.35);
   transform: translateY(-6px);
 }
 
 .cardThird:hover {
-  border-color: #cd7f32; /* Bronce */
+  border-color: #cd7f32;
   box-shadow: 0 0 24px rgba(205, 127, 50, 0.25);
   transform: translateY(-6px);
 }
 
-/* Píldora de premio: centrada en el borde superior, 50% fuera de la card (no clicable) */
+/* Píldora premio: mitad fuera del borde superior. */
 .prizeBadge {
   position: absolute;
   top: 0;
@@ -158,7 +156,7 @@
 }
 
 .cardFirst:hover .prizeBadgeFirst {
-  border-color: #f0d875; /* Oro más claro */
+  border-color: #f0d875;
 }
 
 .prizeBadgeSecond {
@@ -167,7 +165,7 @@
 }
 
 .cardSecond:hover .prizeBadgeSecond {
-  border-color: #e8e8e8; /* Plata más clara */
+  border-color: #e8e8e8;
 }
 
 .prizeBadgeThird {
@@ -176,10 +174,9 @@
 }
 
 .cardThird:hover .prizeBadgeThird {
-  border-color: #e5a855; /* Bronce más claro */
+  border-color: #e5a855;
 }
 
-/* Mobile: icono más grande y menos margen inferior para congruencia visual */
 .docIcon {
   width: 3rem;
   height: 3rem;
@@ -273,20 +270,19 @@
 
   .podium {
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--section-gap); /* Desktop: gap estándar entre columnas */
-    margin-top: 5rem; /* Solo desktop: evita que la card elevada solape el subtítulo */
+    gap: var(--section-gap);
+    margin-top: 5rem;
     margin-bottom: 2rem;
   }
 
-  /* Desktop: 3 columnas. Orden horizontal = 2º (izq) | 1º (centro) | 3º (der) */
   .cardSecond {
     order: 0;
   }
 
   .cardFirst {
     order: 1;
-    align-self: start; /* No estirar: misma altura que el contenido, no igualar al resto */
-    margin-top: -1.5rem; /* La card del 1er premio se desplaza hacia arriba (solo desktop) */
+    align-self: start;
+    margin-top: -1.5rem;
   }
 
   .cardThird {
@@ -335,7 +331,7 @@
 @media (min-width: 1024px) {
   .podium {
     max-width: 1020px;
-    margin-top: 5.5rem; /* Más espacio al aumentar el desplazamiento de la card central */
+    margin-top: 5.5rem;
   }
 
   .cardSecond,
@@ -345,7 +341,7 @@
   }
 
   .cardFirst {
-    margin-top: -2rem; /* Un poco más de desplazamiento hacia arriba en pantallas grandes */
+    margin-top: -2rem;
   }
 
   .prizeBadge {

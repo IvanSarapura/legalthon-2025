@@ -17,7 +17,7 @@ const PHRASE_KEYS = [
   "dontTrustVerify",
 ] as const;
 
-/** Valores por defecto por si la clave no está en messages (evita MISSING_MESSAGE). */
+/** Fallback cuando falta la clave en messages. */
 const PHRASE_DEFAULTS: Record<(typeof PHRASE_KEYS)[number], string> = {
   trazabilidad: "Trazabilidad",
   notYourKeys: "Not your keys, not your coins",

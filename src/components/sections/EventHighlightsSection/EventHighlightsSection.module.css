@@ -1,4 +1,4 @@
-/* Mobile first: base = móvil, mejoras con min-width */
+/* Base móvil. */
 .section {
   padding: var(--section-padding-block) var(--section-padding-inline) var(--section-padding-block-end);
   background-color: var(--section-alt-bg, #f8f8f8);
@@ -29,16 +29,15 @@
   color: var(--text-tertiary);
 }
 
-/* Carrusel: mobile first 2 imágenes visibles, desktop (768px+) 4 imágenes.
-   Proporción rectangular por celda para no deformar las fotos. */
+/* 2 slides visibles en móvil, 4 en desktop; proporción rectangular por celda. */
 .carousel {
   margin-bottom: 1.5rem;
   overflow: hidden;
   background-color: var(--card-bg);
-  --carousel-slide-vw: 50; /* móvil: 2 visibles (50vw cada una) */
+  --carousel-slide-vw: 50;
 }
 
-/* Móvil: 2 celdas 3:2 → aspect-ratio 3/1. Desktop: 4 celdas → 6/1 */
+/* 2 celdas 3:2 (móvil) → aspect 3/1; 4 celdas → 6/1 (desktop). */
 .carouselViewport {
   position: relative;
   width: 100%;
@@ -66,7 +65,7 @@
   animation: none;
 }
 
-/* Distancia = una vuelta (--carousel-count × ancho por slide). --carousel-slide-vw define cuántas caben en 100vw. */
+/* Una vuelta completa del track. */
 @keyframes carouselScroll {
   0% {
     transform: translateX(0);
@@ -82,7 +81,7 @@
   }
 }
 
-/* Mobile first: 50vw por slide (2 visibles). Desktop lo sobrescribe a 25vw (4 visibles). */
+/* Ancho por slide: 50vw móvil, 25vw desktop. */
 .carouselSlide {
   flex: 0 0 calc(var(--carousel-slide-vw) * 1vw);
   width: calc(var(--carousel-slide-vw) * 1vw);
@@ -93,7 +92,6 @@
   border-radius: 0.25rem;
 }
 
-/* contain: mantiene la proporción real de la foto (rectangular), sin recortar */
 .carouselImage {
   width: 100%;
   height: 100%;
@@ -103,7 +101,7 @@
   border-radius: 0.25rem;
 }
 
-/* Asegurar que next/image con fill respete object-fit */
+/* next/image fill necesita object-fit aquí. */
 .carouselImage img {
   object-fit: contain;
 }
@@ -135,7 +133,7 @@
 
   .carousel {
     margin-bottom: 2rem;
-    --carousel-slide-vw: 25; /* desktop: 4 visibles (25vw cada una) */
+    --carousel-slide-vw: 25;
   }
 
   .carouselViewport {

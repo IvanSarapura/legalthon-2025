@@ -13,7 +13,7 @@ export default function Error({ error, reset }: ErrorProps) {
   const router = useRouter();
 
   useEffect(() => {
-    // Log del error para debugging (solo en desarrollo)
+    // Solo en dev
     if (process.env.NODE_ENV === "development") {
       console.error("Error global capturado:", error);
     }

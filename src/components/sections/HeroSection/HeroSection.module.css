@@ -1,7 +1,7 @@
-/* Mobile first: base = móvil, mejoras con min-width */
+/* Base móvil; breakpoints en min-width. */
 .section {
   position: relative;
-  min-height: 100vh; /* Cambio de min-height a 100vh para desktop */
+  min-height: 100vh;
   padding: 4rem var(--section-padding-inline) 4.5rem;
   text-align: center;
   display: flex;
@@ -10,14 +10,14 @@
   overflow: hidden;
 }
 
-/* Imagen de fondo optimizada con next/image */
+/* Imagen de fondo (next/image). */
 .backgroundImage {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
 
-/* Capa de opacidad sobre la imagen, debajo del título */
+/* Overlay sobre la imagen, bajo el título. */
 .opacityOverlay {
   position: absolute;
   inset: 0;
@@ -40,7 +40,7 @@
   }
 }
 
-/* Capa de estrellitas (+) sobre la imagen, debajo del contenido */
+/* Estrellas decorativas (+) sobre el hero. */
 .starsLayer {
   position: absolute;
   inset: 0;
@@ -48,7 +48,7 @@
   pointer-events: none;
 }
 
-/* Cruz / + hecha con CSS (dos barras) */
+/* Cruz (+) con dos barras. */
 .star {
   position: absolute;
   width: 6px;
@@ -128,7 +128,6 @@
   color: var(--text-secondary, #555);
 }
 
-/* Mismo aspecto en móvil y desktop: tipografía y padding unificados */
 .cta {
   margin-top: 0.5rem;
   background-color: var(--primary);
@@ -149,7 +148,7 @@
 
 @media (min-width: 768px) {
   .section {
-    min-height: 100vh; /* Cambio de min-height a 100vh para desktop */
+    min-height: 100vh;
     padding: 8rem var(--section-padding-inline) 8rem;
   }
 

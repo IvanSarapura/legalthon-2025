@@ -13,20 +13,17 @@
   z-index: 1000;
   transition: transform 0.3s ease, box-shadow 0.2s ease, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
   
-  /* Efecto de cristal por defecto */
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   color: var(--primary);
   
-  /* Estado inicial: oculto */
   opacity: 0;
   transform: translateY(10px) scale(0.9);
   pointer-events: none;
 }
 
-/* Estado visible: aparece suavemente */
 .scrollButton.visible {
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -47,7 +44,6 @@
   outline-offset: 4px;
 }
 
-/* Estado cuando está al final de la página */
 .scrollButton.atBottom {
   background-color: var(--primary);
   color: var(--background);

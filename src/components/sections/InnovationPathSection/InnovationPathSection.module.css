@@ -1,4 +1,4 @@
-/* Mobile first: base = móvil. Desktop: fila 1 = cards 1,2,3; fila 2 = card 4 solo en columna central (mismo ancho, centrada) */
+/* Base móvil. Desktop: 3 columnas fila 1; fila 2 centrada. */
 .section {
   padding: var(--section-padding-block) var(--section-padding-inline) var(--section-padding-block-end);
   background-color: var(--section-alt-bg, #f8f8f8);
@@ -20,7 +20,6 @@
   margin: 0 auto;
 }
 
-/* Cada card: contenido centrado, altura mínima para proporción vertical */
 .card {
   min-height: 200px;
   display: flex;
@@ -37,7 +36,6 @@
   transform: translateY(-6px);
 }
 
-/* Mobile: icono más grande y menos margen inferior para congruencia visual */
 .cardIcon {
   width: 3rem;
   height: 3rem;
@@ -68,7 +66,6 @@
   margin-bottom: 0;
 }
 
-/* Botón UBA: misma animación verde y transición suave que VER ONLINE, descarga y VER ÁLBUM */
 .cardButton {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -125,7 +122,6 @@
   color: var(--text-tertiary);
 }
 
-/* Tablet: 2 columnas (2x2) */
 @media (min-width: 480px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
@@ -137,7 +133,6 @@
   }
 }
 
-/* Desktop: 3 columnas. Fila 1 = cards 1, 2, 3; fila 2 = cards 4, 5 (y próximamente 6) */
 @media (min-width: 768px) {
   .title {
     font-size: 2rem;

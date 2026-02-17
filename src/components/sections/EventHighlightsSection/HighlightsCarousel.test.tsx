@@ -26,11 +26,9 @@ describe("duplicateForInfinite", () => {
     const result = duplicateForInfinite(multipleItems);
     
     expect(result).toHaveLength(6);
-    // Verificar que los primeros 3 son los originales
     expect(result[0]).toEqual(multipleItems[0]);
     expect(result[1]).toEqual(multipleItems[1]);
     expect(result[2]).toEqual(multipleItems[2]);
-    // Verificar que los siguientes 3 son duplicados
     expect(result[3]).toEqual(multipleItems[0]);
     expect(result[4]).toEqual(multipleItems[1]);
     expect(result[5]).toEqual(multipleItems[2]);
@@ -43,8 +41,6 @@ describe("duplicateForInfinite", () => {
       { src: "/c.jpg", alt: "C" },
     ];
     const result = duplicateForInfinite(orderedItems);
-    
-    // Verificar que el orden se mantiene en ambas mitades
     expect(result[0].alt).toBe("A");
     expect(result[1].alt).toBe("B");
     expect(result[2].alt).toBe("C");
@@ -60,8 +56,6 @@ describe("duplicateForInfinite", () => {
     ];
     const originalLength = original.length;
     const result = duplicateForInfinite(original);
-    
-    // Verificar que la lista original no cambió
     expect(original).toHaveLength(originalLength);
     expect(result).toHaveLength(originalLength * 2);
   });

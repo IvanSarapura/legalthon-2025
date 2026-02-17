@@ -8,7 +8,6 @@ const DOCUMENTS_ANCHOR = "#documentos-finales";
 export async function HeroSection() {
   const t = await getTranslations("hero");
 
-  /* Estrellitas tipo + distribuidas sobre el hero, con delays variados para el parpadeo */
   const starPositions: { left: string; top: string; delay: string }[] = [
     { left: "12%", top: "18%", delay: "0s" }, // #1
     { left: "88%", top: "22%", delay: "0.4s" }, // #2

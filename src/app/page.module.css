@@ -1,4 +1,3 @@
-/* Mobile first - contenedor de la página */
 .page {
   min-height: 100vh;
   background-color: var(--background);

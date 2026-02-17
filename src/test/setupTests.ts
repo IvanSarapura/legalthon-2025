@@ -2,12 +2,8 @@ import "@testing-library/jest-dom";
 import { cleanup } from "@testing-library/react";
 import { afterEach, vi } from "vitest";
 
-// Limpiar después de cada test
-afterEach(() => {
-  cleanup();
-});
+afterEach(cleanup);
 
-// Mock de next-intl para tests
 vi.mock("next-intl", async () => {
   const actual = await vi.importActual("next-intl");
   return {
@@ -17,7 +13,6 @@ vi.mock("next-intl", async () => {
   };
 });
 
-// Mock de next/navigation
 vi.mock("next/navigation", () => ({
   useRouter: () => ({
     push: vi.fn(),
