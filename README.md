@@ -52,6 +52,7 @@ La página presenta de forma ordenada el propósito del evento, el desarrollo de
 
 - **Estilos** — Variables CSS en `globals.css` (breakpoints, colores, espaciado). Tema con `--primary` verde y soporte `prefers-color-scheme: dark` donde aplica.
 - **Config** — `next.config.ts` con plugin `next-intl` y React Compiler.
+- **Testing** — Vitest + React Testing Library. Ver `src/test/README.md` para más detalles.
 
 ---
 
@@ -66,6 +67,9 @@ Abre [http://localhost:3000](http://localhost:3000); la app redirige al locale p
 
 - **Build:** `npm run build`
 - **Lint:** `npm run lint`
+- **Test:** `npm test` (modo watch) o `npm test -- --run` (una vez)
+- **Test UI:** `npm run test:ui` (interfaz interactiva)
+- **Test Coverage:** `npm run test:coverage` (reporte de cobertura)
 
 ---
 

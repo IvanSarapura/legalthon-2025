@@ -11,7 +11,7 @@ type HighlightsCarouselProps = {
 };
 
 /** Duplica la lista para loop infinito sin corte visible */
-function duplicateForInfinite(list: CarouselImage[]): CarouselImage[] {
+export function duplicateForInfinite(list: CarouselImage[]): CarouselImage[] {
   return [...list, ...list];
 }
 
