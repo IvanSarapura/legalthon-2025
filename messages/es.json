@@ -1,7 +1,10 @@
 {
   "metadata": {
     "title": "Legalthon 2025 | Resultados",
-    "description": "Resultados del Hackathon Académico sobre materias Jurídicas de la Blockchain. Facultad de Derecho (UBA), Comunidad Cardano, FinGurú, Project Catalyst."
+    "description": "Resultados del Hackathon Académico sobre materias Jurídicas de la Blockchain. Facultad de Derecho (UBA), Comunidad Cardano, FinGurú, Project Catalyst.",
+    "siteName": "Legalthon 2025",
+    "ogImage": "/images/JusticeGemini.png",
+    "twitterCard": "summary_large_image"
   },
   "nav": {
     "languageSwitch": "Cambiar idioma",
@@ -92,5 +95,16 @@
     "catalyst": "Project Catalyst",
     "copyright": "© 2025 Legalthon.",
     "scrollToTop": "Volver arriba"
+  },
+  "error": {
+    "title": "Algo salió mal",
+    "description": "Lo sentimos, ocurrió un error inesperado. Por favor, intenta nuevamente o vuelve a la página principal.",
+    "errorId": "ID de error",
+    "tryAgain": "Intentar de nuevo",
+    "goHome": "Ir al inicio"
+  },
+  "loading": {
+    "ariaLabel": "Cargando",
+    "text": "Cargando..."
   }
 }
