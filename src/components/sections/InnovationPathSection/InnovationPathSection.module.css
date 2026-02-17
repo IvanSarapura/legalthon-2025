@@ -136,7 +136,7 @@
   }
 }
 
-/* Desktop: 3 columnas. Fila 1 = cards 1, 2, 3; fila 2 = card 4 (span completo) */
+/* Desktop: 3 columnas. Fila 1 = cards 1, 2, 3; fila 2 = cards 4, 5 (y próximamente 6) */
 @media (min-width: 768px) {
   .title {
     font-size: 2rem;
@@ -165,11 +165,6 @@
 
   .cardBody {
     font-size: 1rem;
-  }
-
-  /* Card 4: solo columna central (2 / 3) = mismo ancho que 1,2,3 y centrada en pantalla */
-  .cardFourth {
-    grid-column: 2 / 3;
   }
 }
 

@@ -43,6 +43,28 @@ function MicroscopeIcon() {
   );
 }
 
+function TutoringIcon() {
+  return (
+    <svg className={styles.cardIcon} viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+      <path
+        d="M14.4875 7.40777C14.0975 7.79777 13.4475 7.79777 13.0575 7.40777L8.5875 2.94777L1.5375 9.98777L0.8775 9.35777C-0.2925 8.18777 -0.2925 6.28777 0.8775 5.11777L5.1175 0.877766C6.2875 -0.292234 8.1875 -0.292234 9.3575 0.877766L14.4875 5.99777C14.8775 6.38777 14.8775 7.01777 14.4875 7.40777ZM15.1875 5.28777C15.9675 6.06777 15.9675 7.33777 15.1875 8.11777C13.9175 9.38777 12.5775 8.33777 12.3575 8.11777L8.5975 4.35777L3.0275 9.92777C2.6375 10.3178 2.6375 10.9478 3.0275 11.3378C3.4175 11.7278 4.0475 11.7278 4.4475 11.3378L9.0675 6.71777L9.7775 7.42777L5.1575 12.0478C4.7675 12.4378 4.7675 13.0678 5.1575 13.4578C5.5475 13.8478 6.1775 13.8478 6.5775 13.4578L11.1975 8.83777L11.9075 9.54777L7.2875 14.1678C6.8975 14.5578 6.8975 15.1878 7.2875 15.5778C7.6775 15.9678 8.3075 15.9678 8.6975 15.5778L13.3175 10.9578L14.0275 11.6678L9.4075 16.2878C9.0175 16.6778 9.0175 17.3078 9.4075 17.6978C9.7975 18.0878 10.4275 18.0878 10.8175 17.6978L19.1375 9.35777C20.3075 8.18777 20.3075 6.28777 19.1375 5.11777L14.8975 0.877766C13.7475 -0.272234 11.8875 -0.292235 10.7175 0.817765L15.1875 5.28777Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+function CeremonyIcon() {
+  return (
+    <svg className={styles.cardIcon} viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+      <path
+        d="M16 2H14V0H4V2H2C0.9 2 0 2.9 0 4V5C0 7.55 1.92 9.63 4.39 9.94C5.02 11.44 6.37 12.57 8 12.9V16H4V18H14V16H10V12.9C11.63 12.57 12.98 11.44 13.61 9.94C16.08 9.63 18 7.55 18 5V4C18 2.9 17.1 2 16 2ZM2 5V4H4V7.82C2.84 7.4 2 6.3 2 5ZM16 5C16 6.3 15.16 7.4 14 7.82V4H16V5Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
 function LegacyIcon() {
   return (
     <svg className={styles.cardIcon} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
@@ -111,10 +133,22 @@ export async function InnovationPathSection() {
           </div>
         </Card>
 
-        <Card variant="default" className={`${styles.card} ${styles.cardFourth}`}>
-          <LegacyIcon />
+        <Card variant="default" className={styles.card}>
+          <TutoringIcon />
           <h3 className={styles.cardTitle}>{t("card4Title")}</h3>
           <p className={styles.cardBody}>{t("card4Body")}</p>
+        </Card>
+
+        <Card variant="default" className={styles.card}>
+          <CeremonyIcon />
+          <h3 className={styles.cardTitle}>{t("card5Title")}</h3>
+          <p className={styles.cardBody}>{t("card5Body")}</p>
+        </Card>
+
+        <Card variant="default" className={styles.card}>
+          <LegacyIcon />
+          <h3 className={styles.cardTitle}>{t("card6Title")}</h3>
+          <p className={styles.cardBody}>{t("card6Body")}</p>
         </Card>
       </div>
     </section>
