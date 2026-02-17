@@ -46,100 +46,129 @@ function DownloadIcon() {
 export async function FinalDocumentsSection() {
   const t = await getTranslations("finalDocuments");
 
+  const starPositions: { left: string; top: string; delay: string }[] = [
+    { left: "10%", top: "6%", delay: "0s" }, // #1
+    { left: "84%", top: "11%", delay: "0.4s" }, // #2
+    { left: "22%", top: "18%", delay: "0.8s" }, // #3
+    { left: "70%", top: "20%", delay: "0.2s" }, // #4
+    { left: "15%", top: "32%", delay: "1.1s" }, // #5
+    { left: "88%", top: "34%", delay: "0.6s" }, // #6
+    { left: "90%", top: "60%", delay: "0.9s" }, // #7
+    { left: "62%", top: "42%", delay: "0.3s" }, // #8
+    { left: "8%", top: "82%", delay: "0.55s" }, // #9
+    { left: "92%", top: "86%", delay: "0.55s" }, // #10
+    { left: "20%", top: "96%", delay: "0.55s" }, // #11
+  ];
+
   return (
     <section
       id="documentos-finales"
       className={styles.section}
       aria-labelledby="documents-title"
     >
-      <h2 id="documents-title" className={styles.title}>
-        {t("title")}
-      </h2>
-      <p className={styles.subtitle}>{t("subtitle")}</p>
-      <div className={styles.podium}>
-        <Card variant="podium" className={styles.cardSecond}>
-          <span className={`${styles.prizeBadge} ${styles.prizeBadgeSecond}`} aria-hidden>
-            {t("prizeBadge2")}
-          </span>
-          <DocumentIcon />
-          <h3 className={styles.docTitle}>{t("doc1Title")}</h3>
-          <div className={styles.actions}>
-            <Button
-              as="a"
-              href={t("doc1ViewUrl")}
-              variant="secondary"
-              className={styles.viewButton}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("viewOnline")}
-            </Button>
-            <a
-              href={t("doc1DownloadUrl")}
-              className={styles.downloadButton}
-              aria-label={t("downloadLabel")}
-              download
-            >
-              <DownloadIcon />
-            </a>
-          </div>
-        </Card>
-        <Card variant="podium" className={styles.cardFirst}>
-          <span className={`${styles.prizeBadge} ${styles.prizeBadgeFirst}`} aria-hidden>
-            {t("prizeBadge1")}
-          </span>
-          <DocumentIcon />
-          <h3 className={styles.docTitle}>{t("doc2Title")}</h3>
-          <div className={styles.actions}>
-            <Button
-              as="a"
-              href={t("doc2ViewUrl")}
-              variant="secondary"
-              className={styles.viewButton}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("viewOnline")}
-            </Button>
-            <a
-              href={t("doc2DownloadUrl")}
-              className={styles.downloadButton}
-              aria-label={t("downloadLabel")}
-              download
-            >
-              <DownloadIcon />
-            </a>
-          </div>
-        </Card>
-        <Card variant="podium" className={styles.cardThird}>
-          <span className={`${styles.prizeBadge} ${styles.prizeBadgeThird}`} aria-hidden>
-            {t("prizeBadge3")}
-          </span>
-          <DocumentIcon />
-          <h3 className={styles.docTitle}>{t("doc3Title")}</h3>
-          <div className={styles.actions}>
-            <Button
-              as="a"
-              href={t("doc3ViewUrl")}
-              variant="secondary"
-              className={styles.viewButton}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("viewOnline")}
-            </Button>
-            <a
-              href={t("doc3DownloadUrl")}
-              className={styles.downloadButton}
-              aria-label={t("downloadLabel")}
-              download
-            >
-              <DownloadIcon />
-            </a>
-          </div>
-        </Card>
+      <div className={styles.starsLayer} aria-hidden>
+        {starPositions.map((pos, i) => (
+          <span
+            key={i}
+            className={styles.star}
+            style={{
+              left: pos.left,
+              top: pos.top,
+              animationDelay: pos.delay,
+            }}
+          />
+        ))}
       </div>
-      <p className={styles.note}>{t("note")}</p>
+      <div className={styles.content}>
+        <h2 id="documents-title" className={styles.title}>
+          {t("title")}
+        </h2>
+        <p className={styles.subtitle}>{t("subtitle")}</p>
+        <div className={styles.podium}>
+          <Card variant="podium" className={styles.cardSecond}>
+            <span className={`${styles.prizeBadge} ${styles.prizeBadgeSecond}`} aria-hidden>
+              {t("prizeBadge2")}
+            </span>
+            <DocumentIcon />
+            <h3 className={styles.docTitle}>{t("doc1Title")}</h3>
+            <div className={styles.actions}>
+              <Button
+                as="a"
+                href={t("doc1ViewUrl")}
+                variant="secondary"
+                className={styles.viewButton}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("viewOnline")}
+              </Button>
+              <a
+                href={t("doc1DownloadUrl")}
+                className={styles.downloadButton}
+                aria-label={t("downloadLabel")}
+                download
+              >
+                <DownloadIcon />
+              </a>
+            </div>
+          </Card>
+          <Card variant="podium" className={styles.cardFirst}>
+            <span className={`${styles.prizeBadge} ${styles.prizeBadgeFirst}`} aria-hidden>
+              {t("prizeBadge1")}
+            </span>
+            <DocumentIcon />
+            <h3 className={styles.docTitle}>{t("doc2Title")}</h3>
+            <div className={styles.actions}>
+              <Button
+                as="a"
+                href={t("doc2ViewUrl")}
+                variant="secondary"
+                className={styles.viewButton}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("viewOnline")}
+              </Button>
+              <a
+                href={t("doc2DownloadUrl")}
+                className={styles.downloadButton}
+                aria-label={t("downloadLabel")}
+                download
+              >
+                <DownloadIcon />
+              </a>
+            </div>
+          </Card>
+          <Card variant="podium" className={styles.cardThird}>
+            <span className={`${styles.prizeBadge} ${styles.prizeBadgeThird}`} aria-hidden>
+              {t("prizeBadge3")}
+            </span>
+            <DocumentIcon />
+            <h3 className={styles.docTitle}>{t("doc3Title")}</h3>
+            <div className={styles.actions}>
+              <Button
+                as="a"
+                href={t("doc3ViewUrl")}
+                variant="secondary"
+                className={styles.viewButton}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("viewOnline")}
+              </Button>
+              <a
+                href={t("doc3DownloadUrl")}
+                className={styles.downloadButton}
+                aria-label={t("downloadLabel")}
+                download
+              >
+                <DownloadIcon />
+              </a>
+            </div>
+          </Card>
+        </div>
+        <p className={styles.note}>{t("note")}</p>
+      </div>
     </section>
   );
 }
