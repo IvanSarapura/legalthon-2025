@@ -19,12 +19,15 @@
   "phraseCarousel": {
     "ariaLabel": "Frases destacadas",
     "trazabilidad": "Trazabilidad",
-    "notYourKeys": "Not your keys, not your coins",
+    "notYourKeys": "No son tus llaves, no son tus monedas",
     "inmutabilidad": "Inmutabilidad",
     "gobernanzaDescentralizada": "Gobernanza descentralizada",
     "identidadSoberana": "Identidad soberana",
     "consenso": "Consenso",
-    "innovacion": "Innovación"
+    "innovacion": "Innovación",
+    "codeIsLaw": "El código es ley",
+    "auditable": "Auditable",
+    "dontTrustVerify": "No confíes, verifica"
   },
   "innovationPath": {
     "title": "El Camino de la Innovación",

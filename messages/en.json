@@ -24,7 +24,10 @@
     "gobernanzaDescentralizada": "Decentralized governance",
     "identidadSoberana": "Sovereign identity",
     "consenso": "Consensus",
-    "innovacion": "Innovation"
+    "innovacion": "Innovation",
+    "codeIsLaw": "The code is law",
+    "auditable": "Auditable",
+    "dontTrustVerify": "Don't trust, verify"
   },
   "innovationPath": {
     "title": "The Path of Innovation",

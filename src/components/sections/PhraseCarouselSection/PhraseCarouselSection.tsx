@@ -12,6 +12,9 @@ const PHRASE_KEYS = [
   "identidadSoberana",
   "consenso",
   "innovacion",
+  "codeIsLaw",
+  "auditable",
+  "dontTrustVerify",
 ] as const;
 
 /** Valores por defecto por si la clave no está en messages (evita MISSING_MESSAGE). */
@@ -23,6 +26,9 @@ const PHRASE_DEFAULTS: Record<(typeof PHRASE_KEYS)[number], string> = {
   identidadSoberana: "Identidad soberana",
   consenso: "Consenso",
   innovacion: "Innovación",
+  codeIsLaw: "The code is law",
+  auditable: "Auditable",
+  dontTrustVerify: "Don't trust, verify",
 };
 
 const SEPARATOR = " • ";
