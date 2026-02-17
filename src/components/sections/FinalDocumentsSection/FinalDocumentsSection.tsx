@@ -54,7 +54,7 @@ export async function FinalDocumentsSection() {
     { left: "15%", top: "32%", delay: "1.1s" }, // #5
     { left: "88%", top: "34%", delay: "0.6s" }, // #6
     { left: "90%", top: "60%", delay: "0.9s" }, // #7
-    { left: "62%", top: "42%", delay: "0.3s" }, // #8
+    { left: "58%", top: "79%", delay: "0.3s" }, // #8
     { left: "8%", top: "82%", delay: "0.55s" }, // #9
     { left: "92%", top: "86%", delay: "0.55s" }, // #10
     { left: "20%", top: "96%", delay: "0.55s" }, // #11
