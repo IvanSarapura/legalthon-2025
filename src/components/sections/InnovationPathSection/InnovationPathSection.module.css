@@ -67,12 +67,13 @@
   margin-bottom: 0;
 }
 
-/* Botón UBA: centrado, espaciado arriba (respecto al texto) y abajo (respecto al video) */
+/* Botón UBA: misma animación verde y transición suave que VER ONLINE, descarga y VER ÁLBUM */
 .cardButton {
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 0.9375rem;
   align-self: center;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 
 .cardButton:hover {
