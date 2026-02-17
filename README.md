@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Legalthon 2025 | Resultados
 
-## Getting Started
+Sitio web de presentación de los **resultados del Legalthon 2025**: Hackathon Académico sobre materias jurídicas de la Blockchain, organizado por la Facultad de Derecho (UBA), la Comunidad Cardano, FinGurú y financiado por Project Catalyst.
 
-First, run the development server:
+## De qué trata la página
+
+La página muestra de forma ordenada el propósito del evento, el desarrollo del Legalthon, el proceso de investigación posterior y el legado en forma de documentos finales. Está pensada para que visitantes, académicos y la comunidad blockchain conozcan los resultados y accedan a los papers y al álbum del evento.
+
+## Principales funcionalidades
+
+- **Hero** — Portada con título “Resultados Legalthon 2025”, subtítulo, socios y botón principal “Ver documentos finales” que lleva a la sección de papers. Incluye estrellitas animadas en CSS sobre la imagen de fondo.
+
+- **Carrusel de frases** — Franja verde con frases destacadas del ecosistema (trazabilidad, inmutabilidad, consenso, “Don’t trust verify”, “The code is law”, etc.) en un carrusel infinito horizontal.
+
+- **El camino de la innovación** — Cuatro bloques (Propósito, Legalthon, Investigación, Legado) con textos, enlace institucional UBA, vídeos embebidos de Vimeo y una animación de estrella fugaz que cruza la sección cada 5 segundos (y al hacer hover en las cards).
+
+- **Documentos finales** — Tres papers ganadores con lugar (1.º, 2.º, 3.º), enlaces para ver online y descargar en PDF (licencia Apache 2.0).
+
+- **Destacados del evento** — Carrusel de fotos del evento y botón “Ver álbum completo” que enlaza al álbum en Google Drive.
+
+- **Organizadores y apoyo** — Logos de Cardano, UBA (Facultad de Derecho), FinGurú y Project Catalyst, con enlaces a sus sitios oficiales.
+
+- **Internacionalización (i18n)** — Soporte para **español** e **inglés** con next-intl; el usuario puede cambiar el idioma desde la barra de navegación.
+
+- **Accesibilidad y rendimiento** — Uso de atributos ARIA, respeto a `prefers-reduced-motion` en animaciones, preload de la imagen del hero y espaciador fijo en el navbar para evitar saltos de layout al cargar.
+
+## Tecnologías
+
+- [Next.js](https://nextjs.org) (App Router)
+- [next-intl](https://next-intl-docs.vercel.app/) para i18n
+- CSS Modules para estilos
+
+## Cómo ejecutar el proyecto
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000). La app redirige al locale por defecto (por ejemplo `/es` o `/en` según la configuración).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Despliegue
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+El proyecto está preparado para desplegarse en [Vercel](https://vercel.com). No requiere configuración de `.htaccess` ni reglas de reescritura tipo SPA; Next.js gestiona las rutas y los locales.
