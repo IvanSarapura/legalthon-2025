@@ -41,7 +41,7 @@
 
 .logoImage {
   width: 100%;
-  max-width: 90px;
+  max-width: 65px;
   height: auto;
   object-fit: contain;
   display: block;
@@ -66,6 +66,6 @@
   }
 
   .logoImage {
-    max-width: 110px;
+    max-width: 80px;
   }
 }
