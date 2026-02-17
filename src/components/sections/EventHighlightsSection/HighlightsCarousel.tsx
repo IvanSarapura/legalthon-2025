@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import styles from "./EventHighlightsSection.module.css";
 
@@ -81,13 +82,13 @@ export function HighlightsCarousel({ images }: HighlightsCarouselProps) {
               className={styles.carouselSlide}
               role="listitem"
             >
-              <img
+              <Image
                 src={img.src}
                 alt={img.alt}
+                fill
                 className={styles.carouselImage}
-                loading="lazy"
-                decoding="async"
-                sizes="25vw"
+                sizes="(max-width: 768px) 50vw, 25vw"
+                quality={85}
               />
             </div>
           ))}

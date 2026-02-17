@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import Image from "next/image";
 import { Button } from "@/components/ui";
 import styles from "./HeroSection.module.css";
 
@@ -29,6 +30,19 @@ export async function HeroSection() {
 
   return (
     <section className={styles.section} aria-label={t("ariaLabel")}>
+      <div className={styles.backgroundImage}>
+        <Image
+          src="/images/JusticeGemini.png"
+          alt=""
+          fill
+          priority
+          quality={90}
+          sizes="100vw"
+          style={{ objectFit: "cover" }}
+          aria-hidden="true"
+        />
+      </div>
+      <div className={styles.opacityOverlay} aria-hidden />
       <div className={styles.starsLayer} aria-hidden>
         {starPositions.map((pos, i) => (
           <span

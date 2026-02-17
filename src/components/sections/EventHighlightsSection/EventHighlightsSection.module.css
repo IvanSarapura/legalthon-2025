@@ -103,6 +103,11 @@
   border-radius: 0.25rem;
 }
 
+/* Asegurar que next/image con fill respete object-fit */
+.carouselImage img {
+  object-fit: contain;
+}
+
 .cta {
   display: block;
   width: 100%;

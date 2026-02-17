@@ -107,6 +107,11 @@
   transition: opacity 0.25s ease;
 }
 
+/* Asegurar que next/image respete object-fit */
+.logoImage img {
+  object-fit: contain;
+}
+
 .logoImage:hover {
   opacity: 1;
 }

@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import Image from "next/image";
 import styles from "./OrganizersSection.module.css";
 
 export async function OrganizersSection() {
@@ -39,10 +40,13 @@ export async function OrganizersSection() {
           className={styles.logoLink}
           aria-label={t("cardano")}
         >
-          <img
+          <Image
             src="/images/cardano-logo.png"
             alt={t("cardano")}
+            width={80}
+            height={80}
             className={styles.logoImage}
+            sizes="(max-width: 768px) 65px, 80px"
           />
         </a>
         <a
@@ -52,10 +56,13 @@ export async function OrganizersSection() {
           className={styles.logoLink}
           aria-label={t("uba")}
         >
-          <img
+          <Image
             src="/images/uba-logo.png"
             alt={t("uba")}
+            width={80}
+            height={80}
             className={styles.logoImage}
+            sizes="(max-width: 768px) 65px, 80px"
           />
         </a>
         <a
@@ -65,10 +72,13 @@ export async function OrganizersSection() {
           className={styles.logoLink}
           aria-label={t("finguru")}
         >
-          <img
+          <Image
             src="/images/finguru-logo.png"
             alt={t("finguru")}
+            width={80}
+            height={80}
             className={styles.logoImage}
+            sizes="(max-width: 768px) 65px, 80px"
           />
         </a>
       </div>
@@ -83,10 +93,13 @@ export async function OrganizersSection() {
           className={styles.logoLink}
           aria-label={t("catalyst")}
         >
-          <img
+          <Image
             src="/images/catalyst-logo.png"
             alt={t("catalyst")}
+            width={80}
+            height={80}
             className={styles.logoImage}
+            sizes="(max-width: 768px) 65px, 80px"
           />
         </a>
       </div>
