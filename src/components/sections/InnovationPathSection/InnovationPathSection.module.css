@@ -28,12 +28,13 @@
   align-items: center;
   text-align: center;
   width: 100%;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .card:hover {
   border-color: var(--primary);
   box-shadow: 0 0 24px var(--primary-glow, rgba(165, 255, 0, 0.2));
+  transform: translateY(-6px);
 }
 
 /* Mobile: icono más grande y menos margen inferior para congruencia visual */
