@@ -1,8 +1,15 @@
-/* Mismo padding que .nav para evitar layout shift. */
+/* Misma posición y tamaño que .nav: fixed para evitar layout shift en primera carga. */
 .placeholder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
   padding: var(--section-padding-inline);
   padding-block: 0.75rem;
   min-height: 2.5rem;
+  pointer-events: none;
 }
 
 @media (min-width: 768px) {
