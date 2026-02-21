@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { Button } from "@/components/ui";
+import { Button, ExternalLinkIcon } from "@/components/ui";
 import {
   HIGHLIGHTS_IMAGES,
   HIGHLIGHTS_IMAGES_BASE,
@@ -29,7 +29,10 @@ export async function EventHighlightsSection() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        {t("ctaAlbum")}
+        <span className={styles.ctaInner}>
+          {t("ctaAlbum")}
+          <ExternalLinkIcon />
+        </span>
       </Button>
     </section>
   );
