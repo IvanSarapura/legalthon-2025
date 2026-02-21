@@ -4,7 +4,7 @@ import styles from "./Button.module.css";
 export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     Pick<AnchorHTMLAttributes<HTMLAnchorElement>, "target" | "rel"> {
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "cta";
   as?: "button" | "a";
   href?: string;
   children: React.ReactNode;

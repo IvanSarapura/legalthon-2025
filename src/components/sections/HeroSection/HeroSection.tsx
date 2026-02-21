@@ -62,7 +62,7 @@ export async function HeroSection() {
         </h1>
         <p className={styles.subtitle}>{t("subtitle")}</p>
         <p className={styles.subtitle}>{t("partners")}</p>
-        <Button as="a" href={DOCUMENTS_ANCHOR} variant="primary" className={styles.cta}>
+        <Button as="a" href={DOCUMENTS_ANCHOR} variant="cta" className={styles.cta}>
           {t("ctaDocuments")}
         </Button>
       </div>

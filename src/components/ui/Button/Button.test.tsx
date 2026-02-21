@@ -36,6 +36,12 @@ describe("Button", () => {
       expect(button.className).toContain("secondary");
     });
 
+    it("aplica la variante cta cuando se especifica", () => {
+      render(<Button variant="cta">CTA</Button>);
+      const button = screen.getByRole("button");
+      expect(button.className).toContain("cta");
+    });
+
     it("aplica clases personalizadas", () => {
       render(<Button className="custom-class">Custom</Button>);
       const button = screen.getByRole("button");
