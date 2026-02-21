@@ -21,19 +21,21 @@ export async function EventHighlightsSection() {
         {t("title")}
       </h2>
       <HighlightsCarousel images={highlightsImages} />
-      <Button
-        as="a"
-        href="https://drive.google.com/drive/folders/1mev0b_SdLMPrpnquWlsbTONuEUG6Y85P"
-        variant="secondary"
-        className={styles.cta}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <span className={styles.ctaInner}>
-          {t("ctaAlbum")}
-          <ExternalLinkIcon />
-        </span>
-      </Button>
+      <div className={styles.ctaWrapper}>
+        <Button
+          as="a"
+          href="https://drive.google.com/drive/folders/1mev0b_SdLMPrpnquWlsbTONuEUG6Y85P"
+          variant="secondary"
+          className={styles.cta}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className={styles.ctaInner}>
+            {t("ctaAlbum")}
+            <ExternalLinkIcon />
+          </span>
+        </Button>
+      </div>
     </section>
   );
 }
