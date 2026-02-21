@@ -12,14 +12,16 @@ La página presenta de forma ordenada el propósito del evento, el desarrollo de
 
 ## Estructura del proyecto
 
-- **`src/app/`** — App Router de Next.js: `layout.tsx` (raíz), `[locale]/layout.tsx` (i18n + navbar + hijos), `[locale]/page.tsx` (página principal que compone las secciones).
+- **`src/app/`** — App Router de Next.js: `layout.tsx` (raíz), `page.tsx` (redirección raíz con detección de idioma vía `Accept-Language`), `error.tsx` (errores globales), `[locale]/layout.tsx` (i18n + navbar + hijos), `[locale]/page.tsx` (página principal), `[locale]/error.tsx`, `[locale]/loading.tsx`.
 - **`src/components/sections/`** — Secciones de la landing: Hero, PhraseCarousel, InnovationPath, FinalDocuments, EventHighlights, Organizers.
-- **`src/components/layout/`** — Navbar (client-only con spacer para evitar layout shift), Footer, HtmlLang.
-- **`src/components/ui/`** — Button, Card (variants: default, podium, small).
-- **`src/i18n/`** — `routing.ts` (locales `es`/`en`, prefijo siempre), `request.ts` (carga de mensajes por locale).
-- **`messages/`** — `es.json` y `en.json` con todos los textos por namespace (metadata, nav, hero, phraseCarousel, innovationPath, finalDocuments, eventHighlights, organizers).
-- **`public/`** — Imágenes (hero, logos de organizadores, fotos del evento), iconos SVG (write-logo, handshake-logo, winer-logo).
-- **`src/data/`** — `highlightsImages.ts`: lista de nombres de imágenes del carrusel de highlights y ruta base.
+- **`src/components/layout/`** — ClientOnlyNavbar, Navbar, Footer, ScrollToTopButton, HtmlLang.
+- **`src/components/ui/`** — Button (variants: primary, secondary, cta, album), Card (default, podium, small), ExternalLinkIcon, DownloadIcon.
+- **`src/i18n/`** — `routing.ts` (locales `es`/`en`, prefijo siempre, localeDetection), `request.ts` (carga de mensajes por locale).
+- **`messages/`** — `es.json` y `en.json` con todos los textos (metadata, nav, hero, phraseCarousel, innovationPath, finalDocuments, eventHighlights, organizers, error, loading).
+- **`src/styles/tokens.css`** — Design tokens unificados (`--ds-*`, `--color-*`, aliases legacy).
+- **`src/lib/metadata.ts`** — Utilidades SEO: `getSiteUrl()`, `getCanonicalUrl()`.
+- **`public/`** — Imágenes (hero, logos, fotos del evento). Uso de `next/image` en Hero, Organizers y carrusel.
+- **`src/data/`** — `highlightsImages.ts`: lista de imágenes del carrusel y ruta base.
 
 ---
 
@@ -27,16 +29,17 @@ La página presenta de forma ordenada el propósito del evento, el desarrollo de
 
 | Sección | Descripción |
 |--------|-------------|
-| **Hero** | Portada con título “Resultados Legalthon 2025”, subtítulo, socios y CTA “Ver documentos finales” (ancla a documentos). Fondo con imagen y estrellitas animadas en CSS.
+| **Hero** | Portada con título “Resultados Legalthon 2025”, subtítulo, socios y CTA verde “Ver documentos finales” (ancla a documentos). Fondo con imagen y estrellitas animadas en CSS. |
 | **Carrusel de frases** | Franja verde con frases del ecosistema (trazabilidad, “Not your keys…”, inmutabilidad, gobernanza, identidad soberana, consenso, innovación, “The code is law”, auditable, “Don’t trust, verify”) en carrusel infinito horizontal. |
-| **El camino de la innovación** | **Seis cards** en grid (móvil 1 columna, tablet 2, desktop 3 columnas × 2 filas): 1. El propósito, 2. El Legalthon (enlace UBA + vídeo Vimeo), 3. La investigación (vídeo), 4. La tutoría (icono handshake), 5. La ceremonia (icono winer), 6. El legado. Cards con mismo estilo y transición al hover. |
-| **Documentos finales** | Tres papers ganadores (1.º, 2.º, 3.º) con títulos, enlaces “Ver online” y descarga en PDF; nota sobre licencia Apache 2.0. |
-| **Destacados del evento** | Carrusel de fotos (lista en `highlightsImages.ts`) y botón “Ver álbum completo” (Google Drive). Controles de reproducción/pausa y accesibilidad. |
-| **Organizadores y apoyo** | Logos de Cardano, UBA (Facultad de Derecho), FinGurú y Project Catalyst con enlaces a sus sitios web oficiales. |
-| **Footer** | Copyright. |
+| **El camino de la innovación** | **Seis cards** en grid (móvil 1 columna, tablet 2, desktop 3×2): 1. El propósito (vídeo Vimeo), 2. El Legalthon (botón UBA Institucional con badge “Sitio oficial” y descripción), 3. La investigación (vídeo), 4. La tutoría, 5. La ceremonia, 6. El legado. Cards con transición al hover. |
+| **Documentos finales** | Tres papers ganadores (1.º, 2.º, 3.º) con títulos, enlaces “Ver online” y descarga en PDF (icono DownloadIcon); nota sobre licencia Apache 2.0. |
+| **Destacados del evento** | Carrusel de fotos (lista en `highlightsImages.ts`) y botón verde “Ver álbum completo” (Google Drive), centrado en la sección. Controles de reproducción/pausa y accesibilidad. |
+| **Organizadores y apoyo** | Logos de Cardano, UBA, FinGurú y Project Catalyst con enlaces a sus sitios oficiales. |
+| **Footer** | Copyright. Botón de scroll hacia arriba (efecto glass, cambio visual al final de página). |
 
-- **Navegación** — Barra fija con cambio de idioma (ES/EN). Navbar se monta en cliente.
-- **Internacionalización** — Español (por defecto) e inglés; rutas con prefijo (`/es`, `/en`). next-intl para mensajes y metadatos.
+- **Navegación** — Barra fija con cambio de idioma (ES/EN). Navbar se monta en cliente (ClientOnlyNavbar).
+- **Internacionalización** — Español (por defecto) e inglés; rutas con prefijo (`/es`, `/en`). Detección de idioma por `Accept-Language` en la raíz (`/`). next-intl para mensajes y metadatos.
+- **SEO** — OpenGraph, Twitter cards, URLs canónicas, robots. Metadatos traducidos por locale.
 
 ---
 
@@ -50,8 +53,8 @@ La página presenta de forma ordenada el propósito del evento, el desarrollo de
 | **TypeScript** | Tipado en todo el proyecto. |
 | **CSS Modules** | Estilos por componente (`.module.css`). |
 
-- **Estilos** — Variables CSS en `globals.css` (breakpoints, colores, espaciado). Tema con `--primary` verde y soporte `prefers-color-scheme: dark` donde aplica.
-- **Config** — `next.config.ts` con plugin `next-intl` y React Compiler.
+- **Estilos** — Design tokens en `src/styles/tokens.css` (breakpoints, espaciado, colores semánticos). Variables legacy en `globals.css`. Tema con `--primary` verde y soporte `prefers-color-scheme: dark`.
+- **Config** — `next.config.ts` con plugin `next-intl`, React Compiler y optimización de imágenes.
 - **Testing** — Vitest + React Testing Library. Ver `src/test/README.md` para más detalles.
 
 ---
@@ -63,7 +66,7 @@ npm install
 npm run dev
 ```
 
-Abre [http://localhost:3000](http://localhost:3000); la app redirige al locale por defecto (`/es`).
+Abre [http://localhost:3000](http://localhost:3000); la app redirige al locale detectado (por `Accept-Language`) o al predeterminado (`/es`).
 
 - **Build:** `npm run build`
 - **Lint:** `npm run lint`
@@ -75,7 +78,7 @@ Abre [http://localhost:3000](http://localhost:3000); la app redirige al locale p
 
 ## Despliegue
 
-El proyecto está preparado para [Vercel](https://vercel.com). Next.js gestiona rutas y locales; no se requiere `.htaccess` ni reglas de reescritura tipo SPA.
+El proyecto está preparado para [Vercel](https://vercel.com). Next.js gestiona rutas y locales; no se requiere `.htaccess` ni reglas de reescritura tipo SPA. Opcionalmente, configurar `NEXT_PUBLIC_SITE_URL` para URLs canónicas en producción.
 
 ---
 
