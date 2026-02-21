@@ -65,6 +65,25 @@ function CeremonyIcon() {
   );
 }
 
+function ExternalLinkIcon() {
+  return (
+    <svg
+      className={styles.externalLinkIcon}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+      <polyline points="15 3 21 3 21 9" />
+      <line x1="10" y1="14" x2="21" y2="3" />
+    </svg>
+  );
+}
+
 function LegacyIcon() {
   return (
     <svg className={styles.cardIcon} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
@@ -89,22 +108,6 @@ export async function InnovationPathSection() {
           <PurposeIcon />
           <h3 className={styles.cardTitle}>{t("card1Title")}</h3>
           <p className={styles.cardBody}>{t("card1Body")}</p>
-        </Card>
-
-        <Card variant="default" className={styles.card}>
-          <TempleIcon />
-          <h3 className={styles.cardTitle}>{t("card2Title")}</h3>
-          <p className={styles.cardBody}>{t("card2Body")}</p>
-          <Button
-            as="a"
-            href={t("card2ButtonUrl")}
-            variant="secondary"
-            className={styles.cardButton}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t("card2ButtonLabel")}
-          </Button>
           <div className={styles.videoWrapper}>
             <iframe
               src={`https://player.vimeo.com/video/${t("videoCard2Id")}`}
@@ -114,6 +117,29 @@ export async function InnovationPathSection() {
               allowFullScreen
               className={styles.videoIframe}
             />
+          </div>
+        </Card>
+
+        <Card variant="default" className={styles.card}>
+          <TempleIcon />
+          <h3 className={styles.cardTitle}>{t("card2Title")}</h3>
+          <p className={styles.cardBody}>{t("card2Body")}</p>
+          <div className={styles.buttonSlot}>
+            <span className={styles.buttonBadge}>{t("card2ButtonBadge")}</span>
+            <Button
+              as="a"
+              href={t("card2ButtonUrl")}
+              variant="secondary"
+              className={styles.cardButton}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={styles.cardButtonInner}>
+                {t("card2ButtonLabel")}
+                <ExternalLinkIcon />
+              </span>
+            </Button>
+            <span className={styles.buttonDescription}>{t("card2ButtonDescription")}</span>
           </div>
         </Card>
 
