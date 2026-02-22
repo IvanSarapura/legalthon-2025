@@ -72,14 +72,17 @@ export async function OrganizersSection() {
           className={styles.logoLink}
           aria-label={t("finguru")}
         >
-          <Image
-            src="/images/FinGuru-logo.webp"
-            alt={t("finguru")}
-            width={80}
-            height={80}
-            className={styles.logoImage}
-            sizes="(max-width: 768px) 65px, 80px"
-          />
+          <span className={styles.logoWithLabel}>
+            <Image
+              src="/images/FinGuru-logo.webp"
+              alt=""
+              width={80}
+              height={80}
+              className={`${styles.logoImage} ${styles.logoImageCircular}`}
+              sizes="(max-width: 768px) 65px, 80px"
+            />
+            <span className={styles.logoLabel}>{t("finguru")}</span>
+          </span>
         </a>
       </div>
       <h2 className={styles.title} id="support-title">

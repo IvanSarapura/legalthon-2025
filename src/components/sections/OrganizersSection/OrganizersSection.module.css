@@ -116,6 +116,30 @@
   opacity: 1;
 }
 
+.logoWithLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logoImageCircular {
+  border-radius: 50%;
+}
+
+.logoLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+  transition: opacity 0.25s ease;
+}
+
+.logoLink:hover .logoLabel {
+  opacity: 1;
+}
+
 @media (min-width: 768px) {
   .title {
     font-size: 0.9375rem;
@@ -130,5 +154,9 @@
 
   .logoImage {
     max-width: 80px;
+  }
+
+  .logoLabel {
+    font-size: 0.86rem;
   }
 }
