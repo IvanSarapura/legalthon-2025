@@ -27,10 +27,12 @@ export async function PressCoverageSection() {
             <h3 className={styles.cardTitle}>
               {t(`${item.id}Title` as "finguru1Title")}
             </h3>
-            {item.source === "linkedin" && (
+            {item.source === "linkedin" ? (
               <p className={styles.cardSubtitle}>
                 {t(`${item.id}Subtitle` as "linkedin1Subtitle")}
               </p>
+            ) : (
+              <span className={styles.cardSeparator} aria-hidden />
             )}
             <p className={styles.cardDescription}>
               {t(`${item.id}Description` as "finguru1Description")}
@@ -61,10 +63,12 @@ export async function PressCoverageSection() {
             <h3 className={styles.cardTitle}>
               {t(`${item.id}Title` as "finguru1Title")}
             </h3>
-            {item.source === "linkedin" && (
+            {item.source === "linkedin" ? (
               <p className={styles.cardSubtitle}>
                 {t(`${item.id}Subtitle` as "linkedin1Subtitle")}
               </p>
+            ) : (
+              <span className={styles.cardSeparator} aria-hidden />
             )}
             <p className={styles.cardDescription}>
               {t(`${item.id}Description` as "finguru1Description")}
