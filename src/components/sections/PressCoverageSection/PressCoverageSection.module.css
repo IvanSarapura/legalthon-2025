@@ -19,7 +19,7 @@
   grid-template-columns: 1fr;
   gap: 1.5rem;
   max-width: 960px;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1rem;
 }
 
 .row2 {
@@ -64,7 +64,7 @@
 }
 
 .cardTitle {
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
   color: var(--text-on-section-alt);
@@ -97,8 +97,8 @@
 }
 
 .cardDescription {
-  font-size: 0.875rem;
-  line-height: 1.5;
+  font-size: 0.9375rem;
+  line-height: 1.55;
   color: var(--text-tertiary);
   margin-bottom: 1rem;
   flex: 1;
@@ -137,7 +137,7 @@
 
   .row2 {
     grid-template-columns: repeat(2, 1fr);
-    max-width: 640px;
+    max-width: 960px;
   }
 }
 
@@ -150,14 +150,12 @@
   .row1 {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--section-gap);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .row2 {
     grid-template-columns: repeat(2, 1fr);
     max-width: 640px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .card {
@@ -165,10 +163,29 @@
   }
 
   .cardTitle {
-    font-size: 1.125rem;
+    font-size: 1.1875rem;
   }
 
   .cardDescription {
-    font-size: 0.9375rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .row1 {
+    max-width: 1020px;
+  }
+
+  /* Mismo ancho por card que LinkedIn: 340px (1020/3 = 680/2) */
+  .row2 {
+    max-width: 680px;
+  }
+
+  .cardTitle {
+    font-size: 1.25rem;
+  }
+
+  .cardDescription {
+    font-size: 1.0625rem;
   }
 }
