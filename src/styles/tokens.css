@@ -2,7 +2,8 @@
    Aliases legacy (--primary, --background, etc.) se mantienen por compatibilidad. */
 
 :root {
-  /* Breakpoints */
+  /* Breakpoints — Documentación de valores. En media queries usar literales (480px, 768px, 1024px)
+     porque CSS no permite var() en condiciones de @media. Ver README "Design tokens y convenciones". */
   --ds-bp-sm: 480px;
   --ds-bp-md: 768px;
   --ds-bp-lg: 1024px;
@@ -121,7 +122,7 @@
   }
 }
 
-/* Tema claro (prefers-color-scheme: light) */
+/* Light theme (opcional): mantiene compatibilidad con prefers-color-scheme */
 @media (prefers-color-scheme: light) {
   :root {
     --color-bg: #ffffff;
