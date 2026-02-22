@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Card, Button, DownloadIcon } from "@/components/ui";
 import styles from "./FinalDocumentsSection.module.css";
 
@@ -23,8 +23,45 @@ function DocumentIcon() {
   );
 }
 
+function getDocUrl(
+  viewUrl: string,
+  viewUrlEn: string,
+  downloadUrl: string,
+  downloadUrlEn: string,
+  locale: string
+): { view: string; download: string } {
+  const useEn = locale === "en" && viewUrlEn;
+  return {
+    view: useEn ? viewUrlEn : viewUrl,
+    download: useEn ? downloadUrlEn : downloadUrl,
+  };
+}
+
 export async function FinalDocumentsSection() {
   const t = await getTranslations("finalDocuments");
+  const locale = await getLocale();
+
+  const doc1 = getDocUrl(
+    t("doc1ViewUrl"),
+    t("doc1ViewUrlEn"),
+    t("doc1DownloadUrl"),
+    t("doc1DownloadUrlEn"),
+    locale
+  );
+  const doc2 = getDocUrl(
+    t("doc2ViewUrl"),
+    t("doc2ViewUrlEn"),
+    t("doc2DownloadUrl"),
+    t("doc2DownloadUrlEn"),
+    locale
+  );
+  const doc3 = getDocUrl(
+    t("doc3ViewUrl"),
+    t("doc3ViewUrlEn"),
+    t("doc3DownloadUrl"),
+    t("doc3DownloadUrlEn"),
+    locale
+  );
 
   const starPositions: { left: string; top: string; delay: string }[] = [
     { left: "10%", top: "6%", delay: "0s" }, // #1
@@ -74,7 +111,7 @@ export async function FinalDocumentsSection() {
             <div className={styles.actions}>
               <Button
                 as="a"
-                href={t("doc1ViewUrl")}
+                href={doc1.view}
                 variant="secondary"
                 className={styles.viewButton}
                 target="_blank"
@@ -83,7 +120,7 @@ export async function FinalDocumentsSection() {
                 {t("viewOnline")}
               </Button>
               <a
-                href={t("doc1DownloadUrl")}
+                href={doc1.download}
                 className={styles.downloadButton}
                 aria-label={t("downloadLabel")}
                 download
@@ -101,7 +138,7 @@ export async function FinalDocumentsSection() {
             <div className={styles.actions}>
               <Button
                 as="a"
-                href={t("doc2ViewUrl")}
+                href={doc2.view}
                 variant="secondary"
                 className={styles.viewButton}
                 target="_blank"
@@ -110,7 +147,7 @@ export async function FinalDocumentsSection() {
                 {t("viewOnline")}
               </Button>
               <a
-                href={t("doc2DownloadUrl")}
+                href={doc2.download}
                 className={styles.downloadButton}
                 aria-label={t("downloadLabel")}
                 download
@@ -128,7 +165,7 @@ export async function FinalDocumentsSection() {
             <div className={styles.actions}>
               <Button
                 as="a"
-                href={t("doc3ViewUrl")}
+                href={doc3.view}
                 variant="secondary"
                 className={styles.viewButton}
                 target="_blank"
@@ -137,7 +174,7 @@ export async function FinalDocumentsSection() {
                 {t("viewOnline")}
               </Button>
               <a
-                href={t("doc3DownloadUrl")}
+                href={doc3.download}
                 className={styles.downloadButton}
                 aria-label={t("downloadLabel")}
                 download

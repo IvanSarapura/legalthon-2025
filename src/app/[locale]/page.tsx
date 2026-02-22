@@ -5,6 +5,7 @@ import {
   InnovationPathSection,
   FinalDocumentsSection,
   EventHighlightsSection,
+  PressCoverageSection,
   OrganizersSection,
 } from "@/components/sections";
 import { Footer } from "@/components/layout";
@@ -24,6 +25,7 @@ export default async function HomePage({ params }: Props) {
         <InnovationPathSection />
         <FinalDocumentsSection />
         <EventHighlightsSection />
+        <PressCoverageSection />
         <OrganizersSection />
         <Footer />
       </main>
