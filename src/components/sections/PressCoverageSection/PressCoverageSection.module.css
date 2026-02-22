@@ -61,6 +61,13 @@
   border-radius: 9999px;
   background: var(--color-border);
   color: var(--text-light);
+  border: 1.55px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover .sourceBadge {
+  color: var(--primary);
+  border-color: var(--primary);
 }
 
 .cardTitle {
