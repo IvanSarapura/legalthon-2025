@@ -57,7 +57,7 @@ La página presenta de forma ordenada el propósito del evento, el desarrollo de
 
 ### Design tokens y convenciones
 
-- **Breakpoints** — Los tokens `--bp-sm` (480px), `--bp-md` (768px) y `--bp-lg` (1024px) documentan los puntos de corte del sistema. Las media queries usan valores literales (p. ej. `@media (min-width: 768px)`), ya que CSS no permite `var()` en condiciones de media query. Mantener estos valores consistentes en todo el proyecto.
+- **Breakpoints** — Los tokens `--bp-sm` (480px), `--bp-md` (768px) y `--bp-lg` (1024px) documentan los puntos de corte del sistema. Las media queries usan valores literales (p. ej. `@media (min-width: 768px)`).
 - **Escala de espaciado, radius y colores** — Se conserva la escala completa como base de diseño aunque no todos los tokens se usen aún. Es práctica habitual en design systems; solo se depuran si hay un objetivo explícito de simplificación.
 - **Config** — `next.config.ts` con plugin `next-intl`, React Compiler y optimización de imágenes.
 - **Testing** — Vitest + React Testing Library. Ver `src/test/README.md` para más detalles.
