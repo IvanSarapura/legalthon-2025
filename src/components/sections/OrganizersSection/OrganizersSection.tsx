@@ -73,7 +73,7 @@ export async function OrganizersSection() {
           aria-label={t("finguru")}
         >
           <Image
-            src="/images/finguru-logo.png"
+            src="/images/FinGuru-logo.webp"
             alt={t("finguru")}
             width={80}
             height={80}
