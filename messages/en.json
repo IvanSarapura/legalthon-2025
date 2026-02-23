@@ -101,6 +101,15 @@
     "linkedin3Subtitle": "Co Founder & CTO Token Allies",
     "linkedin3Description": "Impact of the Legalthon on the ecosystem."
   },
+  "jury": {
+    "title": "JURY",
+    "jury1Name": "Paloma Szerman",
+    "jury1Role": "Lawyer NYU. Specialized in regulatory policies and corporate relations.",
+    "jury2Name": "Agustin Pesce",
+    "jury2Role": "Regulatory lawyer, AML & Compliance. Executive Director at Guardline.",
+    "jury3Name": "José María Otegui",
+    "jury3Role": "Diplomat. Deputy Coordinator at MFA G20 Unit."
+  },
   "eventHighlights": {
     "title": "EVENT HIGHLIGHTS",
     "carouselPlaceholder": "Image carousel (coming soon)",

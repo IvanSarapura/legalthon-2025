@@ -4,6 +4,7 @@ import {
   PhraseCarouselSection,
   InnovationPathSection,
   FinalDocumentsSection,
+  JurySection,
   EventHighlightsSection,
   PressCoverageSection,
   OrganizersSection,
@@ -24,6 +25,7 @@ export default async function HomePage({ params }: Props) {
         <PhraseCarouselSection />
         <InnovationPathSection />
         <FinalDocumentsSection />
+        <JurySection />
         <EventHighlightsSection />
         <PressCoverageSection />
         <OrganizersSection />
