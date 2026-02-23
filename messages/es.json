@@ -85,7 +85,7 @@
     "note": "Nota: Los documentos son Open Source con licencia Apache 2.0 bajo consentimiento expreso y firmado de los autores y organizadores."
   },
   "pressCoverage": {
-    "title": "COBERTURA EN MEDIOS",
+    "title": "Cobertura de medios",
     "readMoreLabel": "Leer más",
     "finguru1Title": "La justicia no puede quedarse en el tiempo",
     "finguru1Description": "El derecho y la tecnología se unen en el Legalthon.",
@@ -102,7 +102,7 @@
     "linkedin3Description": "Impacto del Legalthon en el ecosistema."
   },
   "jury": {
-    "title": "JURADO",
+    "title": "Jurado",
     "subtitle": "Expertos que evaluaron las propuestas del Legalthon 2025",
     "jury1Name": "Paloma Szerman",
     "jury1Role": "Abogada NYU. Especializada en políticas regulatorias y relaciones corporativas.",
@@ -118,7 +118,7 @@
     "jury6Role": "Embajador y DRep de Cardano. Cofundador de Token Allies y el Cardano Newsletter."
   },
   "eventHighlights": {
-    "title": "HIGHLIGHTS DEL EVENTO",
+    "title": "Highlights del evento",
     "carouselPlaceholder": "Carrusel de imágenes (próximamente)",
     "ctaAlbum": "VER ÁLBUM COMPLETO",
     "carouselPrev": "Anterior",
