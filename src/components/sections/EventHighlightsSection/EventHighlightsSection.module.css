@@ -11,6 +11,29 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
+  overflow: hidden;
+}
+
+/* Mismo principio que el carrusel: track sin width fijo, translateX con valor calculado
+   exacto = ancho de una copia. Así el reset del loop es invisible. */
+.starsTrack {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: max-content;
+  height: 100%;
+  animation: starsScroll 60s linear infinite;
+  will-change: transform;
+  --stars-slot-vw: 20;
+}
+
+.starSlot {
+  flex: 0 0 calc(var(--stars-slot-vw) * 1vw);
+  width: calc(var(--stars-slot-vw) * 1vw);
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .star {
@@ -19,8 +42,7 @@
   height: 6px;
   transform: translate(-50%, -50%);
   color: var(--primary);
-  opacity: 0.5;
-  animation: starTwinkle 2.5s ease-in-out infinite;
+  opacity: 0.6;
 }
 
 .star::before,
@@ -47,13 +69,18 @@
   transform: translateY(-50%);
 }
 
-@keyframes starTwinkle {
-  0%,
-  100% {
-    opacity: 0.25;
+@keyframes starsScroll {
+  0% {
+    transform: translateX(0);
   }
-  50% {
-    opacity: 0.85;
+  100% {
+    transform: translateX(calc(-1 * var(--stars-copy-slots, 5) * var(--stars-slot-vw, 20) * 1vw));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .starsTrack {
+    animation: none;
   }
 }
 

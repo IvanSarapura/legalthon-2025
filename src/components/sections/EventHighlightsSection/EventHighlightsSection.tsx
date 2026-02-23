@@ -15,28 +15,33 @@ const highlightsImages = HIGHLIGHTS_IMAGES.map((filename) => ({
 export async function EventHighlightsSection() {
   const t = await getTranslations("eventHighlights");
 
-  const starPositions: { left: string; top: string; delay: string }[] = [
-    { left: "12%", top: "22%", delay: "0s" },
-    { left: "88%", top: "18%", delay: "0.4s" },
-    { left: "45%", top: "10%", delay: "0.8s" },
-    { left: "25%", top: "68%", delay: "0.2s" },
-    { left: "78%", top: "88%", delay: "0.6s" },
+  /* 5 estrellas con posiciones verticales variadas. Duplicadas 1 vez para loop infinito
+     (mismo principio que el carrusel: copia exacta para reset invisible). */
+  const starPositions: { top: string }[] = [
+    { top: "22%" },
+    { top: "18%" },
+    { top: "38%" },
+    { top: "68%" },
+    { top: "87%" },
   ];
+  const STAR_SLOTS_PER_COPY = starPositions.length;
+  const starSlots = [...starPositions, ...starPositions].map((pos, i) => (
+    <div key={i} className={styles.starSlot}>
+      <span
+        className={styles.star}
+        style={{ top: pos.top, left: "50%" }}
+      />
+    </div>
+  ));
 
   return (
     <section className={styles.section} aria-labelledby="highlights-title">
-      <div className={styles.starsLayer} aria-hidden>
-        {starPositions.map((pos, i) => (
-          <span
-            key={i}
-            className={styles.star}
-            style={{
-              left: pos.left,
-              top: pos.top,
-              animationDelay: pos.delay,
-            }}
-          />
-        ))}
+      <div
+        className={styles.starsLayer}
+        aria-hidden
+        style={{ "--stars-copy-slots": STAR_SLOTS_PER_COPY } as React.CSSProperties}
+      >
+        <div className={styles.starsTrack}>{starSlots}</div>
       </div>
       <div className={styles.content}>
         <h2 id="highlights-title" className={styles.title}>
