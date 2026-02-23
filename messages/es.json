@@ -103,12 +103,19 @@
   },
   "jury": {
     "title": "JURADO",
+    "subtitle": "Expertos que evaluaron las propuestas del Legalthon 2025",
     "jury1Name": "Paloma Szerman",
     "jury1Role": "Abogada NYU. Especializada en políticas regulatorias y relaciones corporativas.",
     "jury2Name": "Agustin Pesce",
     "jury2Role": "Abogado regulatorio, AML & Compliance. Director Ejecutivo en Guardline.",
     "jury3Name": "José María Otegui",
-    "jury3Role": "Diplomático. Deputy Coordinator at MFA G20 Unit."
+    "jury3Role": "Diplomático. Deputy Coordinator at MFA G20 Unit.",
+    "jury4Name": "Alex Pestchanker",
+    "jury4Role": "CTO Token Allies y Especialista en Tecnologías exponenciales.",
+    "jury5Name": "Viviana Albert",
+    "jury5Role": "Abogada UBA. Asociada en Estudio CAO & Asoc.",
+    "jury6Name": "Lucas Macchiavelli",
+    "jury6Role": "Embajador y DRep de Cardano. Cofundador de Token Allies y el Cardano Newsletter."
   },
   "eventHighlights": {
     "title": "HIGHLIGHTS DEL EVENTO",

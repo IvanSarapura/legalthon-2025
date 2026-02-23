@@ -85,7 +85,7 @@
     "note": "Note: The documents are Open Source under Apache 2.0 license with express signed consent from authors and organizers."
   },
   "pressCoverage": {
-    "title": "PRESS COVERAGE",
+    "title": "Press Coverage",
     "readMoreLabel": "Read more",
     "finguru1Title": "Justice cannot remain in the past",
     "finguru1Description": "Law and technology unite at Legalthon.",
@@ -102,16 +102,23 @@
     "linkedin3Description": "Impact of the Legalthon on the ecosystem."
   },
   "jury": {
-    "title": "JURY",
+    "title": "Jury",
+    "subtitle": "Experts who evaluated the Legalthon 2025 proposals",
     "jury1Name": "Paloma Szerman",
     "jury1Role": "Lawyer NYU. Specialized in regulatory policies and corporate relations.",
     "jury2Name": "Agustin Pesce",
     "jury2Role": "Regulatory lawyer, AML & Compliance. Executive Director at Guardline.",
     "jury3Name": "José María Otegui",
-    "jury3Role": "Diplomat. Deputy Coordinator at MFA G20 Unit."
+    "jury3Role": "Diplomat. Deputy Coordinator at MFA G20 Unit.",
+    "jury4Name": "Alex Pestchanker",
+    "jury4Role": "CTO Token Allies and Specialist in Exponential Technologies.",
+    "jury5Name": "Viviana Albert",
+    "jury5Role": "Lawyer UBA. Associate at CAO & Asoc.",
+    "jury6Name": "Lucas Macchiavelli",
+    "jury6Role": "Cardano Ambassador and DRep. Co-founder of Token Allies and the Cardano Newsletter."
   },
   "eventHighlights": {
-    "title": "EVENT HIGHLIGHTS",
+    "title": "Event Highlights",
     "carouselPlaceholder": "Image carousel (coming soon)",
     "ctaAlbum": "VIEW FULL ALBUM",
     "carouselPrev": "Previous",

@@ -11,6 +11,7 @@ export async function JurySection() {
       <h2 id="jury-title" className={styles.title}>
         {t("title")}
       </h2>
+      <p className={styles.subtitle}>{t("subtitle")}</p>
       <div className={styles.grid} role="list">
         {JURY_MEMBERS.map((member) => {
           const nameKey = `${member.id}Name` as const;
