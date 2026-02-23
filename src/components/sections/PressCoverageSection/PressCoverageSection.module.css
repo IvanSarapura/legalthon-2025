@@ -1,6 +1,6 @@
 /* Base móvil. Fila 1: 3 cards; fila 2: 2 cards centradas. */
 .section {
-  padding: var(--ds-space-1, 1.5rem) var(--section-padding-inline)
+  padding: var(--section-padding-block) var(--section-padding-inline)
     var(--section-padding-block-end);
   background-color: var(--section-alt-bg);
 }
