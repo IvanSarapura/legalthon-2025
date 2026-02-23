@@ -6,22 +6,75 @@ Sitio web de presentación de los **resultados del Legalthon 2025**: Hackathon A
 
 ## De qué trata la página
 
-La página presenta de forma ordenada el propósito del evento, el desarrollo del Legalthon, la investigación con tutoría, la ceremonia de cierre y el legado en documentos finales. Está pensada para que visitantes, académicos y la comunidad blockchain conozcan los resultados y accedan a los papers (Apache 2.0) y al álbum de fotos del evento.
+La página presenta de forma ordenada el propósito del evento, el desarrollo del Legalthon, la investigación con tutoría, la ceremonia de cierre y el legado en documentos finales. Está pensada para que visitantes, académicos y la comunidad blockchain conozcan los resultados y accedan a los papers (Apache 2.0), al álbum de fotos del evento y a la información del jurado evaluador.
 
 ---
 
 ## Estructura del proyecto
 
-- **`src/app/`** — App Router de Next.js: `layout.tsx` (raíz), `page.tsx` (redirección raíz con detección de idioma vía `Accept-Language`), `error.tsx` (errores globales), `[locale]/layout.tsx` (i18n + navbar + hijos), `[locale]/page.tsx` (página principal), `[locale]/error.tsx`, `[locale]/loading.tsx`.
-- **`src/components/sections/`** — Secciones de la landing: Hero, PhraseCarousel, InnovationPath, FinalDocuments, EventHighlights, Organizers.
-- **`src/components/layout/`** — ClientOnlyNavbar, Navbar, Footer, ScrollToTopButton, HtmlLang.
-- **`src/components/ui/`** — Button (variants: primary, secondary, cta, album), Card (default, podium, small), ExternalLinkIcon, DownloadIcon.
-- **`src/i18n/`** — `routing.ts` (locales `es`/`en`, prefijo siempre, localeDetection), `request.ts` (carga de mensajes por locale).
-- **`messages/`** — `es.json` y `en.json` con todos los textos (metadata, nav, hero, phraseCarousel, innovationPath, finalDocuments, eventHighlights, organizers, error, loading).
-- **`src/styles/tokens.css`** — Design tokens unificados (`--ds-*`, `--color-*`, aliases legacy).
-- **`src/lib/metadata.ts`** — Utilidades SEO: `getSiteUrl()`, `getCanonicalUrl()`.
-- **`public/`** — Imágenes (hero, logos, fotos del evento). Uso de `next/image` en Hero, Organizers y carrusel.
-- **`src/data/`** — `highlightsImages.ts`: lista de imágenes del carrusel y ruta base.
+```
+legalthon-page/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx              # Layout raíz (globals.css)
+│   │   ├── page.tsx                # Redirección / → /{locale} según Accept-Language
+│   │   ├── page.module.css
+│   │   ├── globals.css
+│   │   ├── error.tsx               # Errores globales
+│   │   └── [locale]/
+│   │       ├── layout.tsx          # i18n + Navbar + metadata + NextIntlClientProvider
+│   │       ├── page.tsx            # Página principal (secciones)
+│   │       ├── loading.tsx         # Estado de carga
+│   │       └── error.tsx           # Errores por locale
+│   ├── components/
+│   │   ├── sections/               # Secciones de la landing
+│   │   │   ├── HeroSection/
+│   │   │   ├── PhraseCarouselSection/
+│   │   │   ├── InnovationPathSection/
+│   │   │   ├── FinalDocumentsSection/
+│   │   │   ├── JurySection/
+│   │   │   ├── EventHighlightsSection/
+│   │   │   │   └── HighlightsCarousel.tsx   # Carrusel cliente
+│   │   │   ├── PressCoverageSection/
+│   │   │   └── OrganizersSection/
+│   │   ├── layout/
+│   │   │   ├── ClientOnlyNavbar/
+│   │   │   ├── Navbar/
+│   │   │   ├── Footer/
+│   │   │   ├── ScrollToTopButton/
+│   │   │   └── HtmlLang/
+│   │   └── ui/
+│   │       ├── Button/
+│   │       ├── Card/
+│   │       ├── ExternalLinkIcon/
+│   │       └── DownloadIcon/
+│   ├── data/
+│   │   ├── highlightsImages.ts     # Imágenes del carrusel de fotos
+│   │   ├── jury.ts                 # Miembros del jurado
+│   │   └── pressCoverage.ts        # Items de cobertura en medios
+│   ├── i18n/
+│   │   ├── routing.ts              # Locales es/en, prefijo siempre
+│   │   ├── request.ts              # Carga de mensajes por locale
+│   │   └── navigation.ts           # Navegación localizada
+│   ├── lib/
+│   │   └── metadata.ts             # getSiteUrl, getCanonicalUrl (SEO)
+│   ├── styles/
+│   │   └── tokens.css              # Design tokens
+│   └── test/
+│       └── setupTests.ts           # Mocks para Vitest
+├── messages/
+│   ├── es.json                     # Textos en español
+│   └── en.json                     # Textos en inglés
+├── public/
+│   ├── images/                     # Hero, logos, carrusel, jurado
+│   │   └── jury/                   # Fotos de miembros del jurado
+│   ├── documents/                  # PDFs de los papers
+│   └── icons/
+├── middleware.ts                   # next-intl: redirección por locale
+├── next.config.ts
+├── vitest.config.ts
+└── package.json
+```
 
 ---
 
@@ -29,38 +82,54 @@ La página presenta de forma ordenada el propósito del evento, el desarrollo de
 
 | Sección | Descripción |
 |--------|-------------|
-| **Hero** | Portada con título “Resultados Legalthon 2025”, subtítulo, socios y CTA verde “Ver documentos finales” (ancla a documentos). Fondo con imagen y estrellitas animadas en CSS. |
-| **Carrusel de frases** | Franja verde con frases del ecosistema (trazabilidad, “Not your keys…”, inmutabilidad, gobernanza, identidad soberana, consenso, innovación, “The code is law”, auditable, “Don’t trust, verify”) en carrusel infinito horizontal. |
-| **El camino de la innovación** | **Seis cards** en grid (móvil 1 columna, tablet 2, desktop 3×2): 1. El propósito (vídeo Vimeo), 2. El Legalthon (botón UBA Institucional con badge “Sitio oficial” y descripción), 3. La investigación (vídeo), 4. La tutoría, 5. La ceremonia, 6. El legado. Cards con transición al hover. |
-| **Documentos finales** | Tres papers ganadores (1.º, 2.º, 3.º) con títulos, enlaces “Ver online” y descarga en PDF (icono DownloadIcon); nota sobre licencia Apache 2.0. |
-| **Destacados del evento** | Carrusel de fotos (lista en `highlightsImages.ts`) y botón verde “Ver álbum completo” (Google Drive), centrado en la sección. Controles de reproducción/pausa y accesibilidad. |
-| **Organizadores y apoyo** | Logos de Cardano, UBA, FinGurú y Project Catalyst con enlaces a sus sitios oficiales. |
-| **Footer** | Copyright. Botón de scroll hacia arriba (efecto glass, cambio visual al final de página). |
+| **Hero** | Portada con título "Resultados Legalthon 2025", subtítulo, socios y CTA verde "Ver documentos finales" (ancla `#documentos-finales`). Fondo con imagen y estrellas animadas en CSS. |
+| **Carrusel de frases** | Franja verde con frases del ecosistema blockchain (trazabilidad, "Not your keys…", inmutabilidad, gobernanza, identidad soberana, consenso, innovación, "Code is law", auditable, "Don't trust, verify") en carrusel infinito horizontal. Pausa al pasar el mouse o enfocar. |
+| **El camino de la innovación** | **Seis cards** en grid (móvil 1 col, tablet 2, desktop 3×2): 1. El propósito (vídeo Vimeo), 2. El Legalthon (botón UBA Institucional), 3. La investigación (vídeo), 4. La tutoría, 5. La ceremonia, 6. El legado. Cards con transición al hover. |
+| **Documentos finales** | Tres papers ganadores (podium 2-1-3) con títulos, enlaces "Ver online" y descarga en PDF. Nota sobre licencia Apache 2.0. Fondo oscuro con estrellas. |
+| **Jurado** | Seis cards con foto circular (borde gris, verde al hover), nombre y rol. Subtítulo: "Expertos que evaluaron las propuestas del Legalthon 2025". Soporta `flipHorizontal` para imágenes que miran hacia un lado. |
+| **Event Highlights** | Carrusel infinito de fotos del evento con estrellas animadas en background (movimiento horizontal continuo, sincronizado con el carrusel; pausa al hover). Botón "Ver álbum completo" (Google Drive). Fondo negro. |
+| **Cobertura en medios** | Cinco cards: 3 en LinkedIn (fila 1) y 2 en FinGurú (fila 2). URLs por locale para FinGurú. Badge de fuente (LinkedIn/FinGurú). |
+| **Organizadores** | Logos de Cardano, UBA, FinGurú y Project Catalyst con enlaces. Fondo oscuro con estrellas. |
+| **Footer** | Copyright. Botón de scroll hacia arriba (efecto glass, visible al final de página). |
 
-- **Navegación** — Barra fija con cambio de idioma (ES/EN). Navbar se monta en cliente (ClientOnlyNavbar).
-- **Internacionalización** — Español (por defecto) e inglés; rutas con prefijo (`/es`, `/en`). Detección de idioma por `Accept-Language` en la raíz (`/`). next-intl para mensajes y metadatos.
-- **SEO** — OpenGraph, Twitter cards, URLs canónicas, robots. Metadatos traducidos por locale.
+- **Navegación** — Barra fija con cambio de idioma (ES/EN). Navbar montada en cliente (`ClientOnlyNavbar`) para evitar hidratación incorrecta.
+- **Internacionalización** — Español (por defecto) e inglés; rutas con prefijo (`/es`, `/en`). Detección por `Accept-Language` en la raíz (`/`).
+- **SEO** — OpenGraph, Twitter cards, URLs canónicas, robots. Metadatos traducidos por locale. `NEXT_PUBLIC_SITE_URL` para producción.
 
 ---
 
 ## Tecnologías
 
-| Dependencia | Uso |
-|-------------|-----|
-| **Next.js** (16.x) | App Router, SSG/SSR, generación de rutas por locale. |
-| **React** (19.x) | Componentes y hooks. |
-| **next-intl** (4.x) | i18n: mensajes, rutas localizadas, `getTranslations` / `useTranslations`. |
-| **TypeScript** | Tipado en todo el proyecto. |
-| **CSS Modules** | Estilos por componente (`.module.css`). |
+| Dependencia | Versión | Uso |
+|-------------|---------|-----|
+| **Next.js** | 16.1.6 | App Router, SSG/SSR, Turbopack, rutas por locale |
+| **React** | 19.2.3 | Componentes y hooks |
+| **next-intl** | ^4.8.2 | i18n: mensajes, rutas, `getTranslations` / `useTranslations` |
+| **TypeScript** | ^5 | Tipado estricto |
+| **Vitest** | ^4.0.18 | Tests unitarios y de componentes |
+| **React Testing Library** | ^16.1.0 | Tests de componentes React |
+| **React Compiler** | 1.0.0 | Optimización automática (next.config) |
 
-- **Estilos** — Design tokens en `src/styles/tokens.css` (breakpoints, espaciado, colores semánticos). Variables legacy en `globals.css`. Tema con `--primary` verde y soporte `prefers-color-scheme: dark`.
+- **Estilos** — CSS Modules (`.module.css`) por componente. Design tokens en `src/styles/tokens.css`.
+- **Imágenes** — `next/image` con formatos AVIF/WebP, device sizes optimizados.
 
-### Design tokens y convenciones
+### Design tokens (`tokens.css`)
 
-- **Breakpoints** — Los tokens `--bp-sm` (480px), `--bp-md` (768px) y `--bp-lg` (1024px) documentan los puntos de corte del sistema. Las media queries usan valores literales (p. ej. `@media (min-width: 768px)`).
-- **Escala de espaciado, radius y colores** — Se conserva la escala completa como base de diseño aunque no todos los tokens se usen aún. Es práctica habitual en design systems; solo se depuran si hay un objetivo explícito de simplificación.
-- **Config** — `next.config.ts` con plugin `next-intl`, React Compiler y optimización de imágenes.
-- **Testing** — Vitest + React Testing Library. Ver `src/test/README.md` para más detalles.
+- **Breakpoints:** 480px, 768px, 1024px (documentados como `--bp-*`; media queries usan literales).
+- **Colores:** Verde primario `#a5ff00`, secundario `#00baa8`; neutros para tema oscuro/claro.
+- **Espaciado de secciones:** `--section-padding-block`, `--section-padding-block-end`, `--section-padding-inline`, `--section-gap`.
+- **Tema claro:** `@media (prefers-color-scheme: light)` con paleta invertida.
+
+---
+
+## Datos y contenido
+
+| Archivo | Contenido |
+|---------|-----------|
+| `highlightsImages.ts` | Lista de nombres de archivo del carrusel de fotos y ruta base `/images`. |
+| `jury.ts` | Seis miembros del jurado: `id`, `imageSrc`, `flipHorizontal`. Nombres y roles en `messages` (`jury.jury1Name`, `jury1Role`, etc.). |
+| `pressCoverage.ts` | Cinco ítems con `id`, `source` (linkedin/finguru), `url` (string o `{ es, en }`). Títulos en `messages`. |
+| `messages/es.json`, `messages/en.json` | Todos los textos: metadata, nav, hero, phraseCarousel, innovationPath, finalDocuments, jury, eventHighlights, pressCoverage, organizers, error, loading. |
 
 ---
 
@@ -73,17 +142,30 @@ npm run dev
 
 Abre [http://localhost:3000](http://localhost:3000); la app redirige al locale detectado (por `Accept-Language`) o al predeterminado (`/es`).
 
-- **Build:** `npm run build`
-- **Lint:** `npm run lint`
-- **Test:** `npm test` (modo watch) o `npm test -- --run` (una vez)
-- **Test UI:** `npm run test:ui` (interfaz interactiva)
-- **Test Coverage:** `npm run test:coverage` (reporte de cobertura)
+### Scripts
+
+| Comando | Descripción |
+|---------|-------------|
+| `npm run dev` | Servidor de desarrollo |
+| `npm run build` | Build de producción |
+| `npm run start` | Servidor de producción (post-build) |
+| `npm run lint` | ESLint |
+| `npm test` | Vitest (modo watch) |
+| `npm test -- --run` | Vitest (una ejecución) |
+| `npm run test:ui` | Vitest UI interactiva |
+| `npm run test:coverage` | Reporte de cobertura |
 
 ---
 
 ## Despliegue
 
-El proyecto está preparado para [Vercel](https://vercel.com). Next.js gestiona rutas y locales; no se requiere `.htaccess` ni reglas de reescritura tipo SPA. Opcionalmente, configurar `NEXT_PUBLIC_SITE_URL` para URLs canónicas en producción.
+El proyecto está preparado para [Vercel](https://vercel.com). Opcionalmente, configurar la variable de entorno `NEXT_PUBLIC_SITE_URL` para URLs canónicas correctas en producción (por defecto usa `https://legalthon-2025.vercel.app`).
+
+---
+
+## Testing
+
+Ver `src/test/README.md` para configuración de Vitest, mocks (next-intl, next/navigation) y guía para escribir tests. Tests incluidos: `Button.test.tsx`, `HighlightsCarousel.test.tsx`, `highlightsImages.test.ts`.
 
 ---
 
