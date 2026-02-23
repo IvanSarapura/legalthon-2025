@@ -28,7 +28,7 @@ export async function JurySection() {
                   width={140}
                   height={140}
                   sizes="(max-width: 480px) 120px, (max-width: 768px) 100px, 140px"
-                  className={member.flipHorizontal ? styles.photoFlipped : undefined}
+                  className={member.flipHorizontal === true ? styles.photoFlipped : undefined}
                 />
               </div>
               <h3 className={styles.cardName}>{t(nameKey)}</h3>
