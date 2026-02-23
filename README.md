@@ -4,6 +4,20 @@ Sitio web de presentación de los **resultados del Legalthon 2025**: Hackathon A
 
 ---
 
+## Índice
+
+- [De qué trata la página](#de-qué-trata-la-página)
+- [Estructura del proyecto](#estructura-del-proyecto)
+- [Secciones y funcionalidades](#secciones-y-funcionalidades)
+- [Tecnologías](#tecnologías)
+- [Datos y contenido](#datos-y-contenido)
+- [Cómo ejecutar](#cómo-ejecutar)
+- [Despliegue](#despliegue)
+- [Testing](#testing)
+- [Página original](#página-original)
+
+---
+
 ## De qué trata la página
 
 La página presenta de forma ordenada el propósito del evento, el desarrollo del Legalthon, la investigación con tutoría, la ceremonia de cierre y el legado en documentos finales. Está pensada para que visitantes, académicos y la comunidad blockchain conozcan los resultados y accedan a los papers (Apache 2.0), al álbum de fotos del evento y a la información del jurado evaluador.
@@ -86,7 +100,7 @@ legalthon-page/
 | **Carrusel de frases** | Franja verde con frases del ecosistema blockchain (trazabilidad, "Not your keys…", inmutabilidad, gobernanza, identidad soberana, consenso, innovación, "Code is law", auditable, "Don't trust, verify") en carrusel infinito horizontal. Pausa al pasar el mouse o enfocar. |
 | **El camino de la innovación** | **Seis cards** en grid (móvil 1 col, tablet 2, desktop 3×2): 1. El propósito (vídeo Vimeo), 2. El Legalthon (botón UBA Institucional), 3. La investigación (vídeo), 4. La tutoría, 5. La ceremonia, 6. El legado. Cards con transición al hover. |
 | **Documentos finales** | Tres papers ganadores (podium 2-1-3) con títulos, enlaces "Ver online" y descarga en PDF. Nota sobre licencia Apache 2.0. Fondo oscuro con estrellas. |
-| **Jurado** | Seis cards con foto circular (borde gris, verde al hover), nombre y rol. Subtítulo: "Expertos que evaluaron las propuestas del Legalthon 2025". Soporta `flipHorizontal` para imágenes que miran hacia un lado. |
+| **Jurado** | Seis cards con foto circular (borde gris, verde al hover), nombre y rol. Subtítulo: "Expertos que evaluaron las propuestas del Legalthon 2025". |
 | **Event Highlights** | Carrusel infinito de fotos del evento con estrellas animadas en background (movimiento horizontal continuo, sincronizado con el carrusel; pausa al hover). Botón "Ver álbum completo" (Google Drive). Fondo negro. |
 | **Cobertura en medios** | Cinco cards: 3 en LinkedIn (fila 1) y 2 en FinGurú (fila 2). URLs por locale para FinGurú. Badge de fuente (LinkedIn/FinGurú). |
 | **Organizadores** | Logos de Cardano, UBA, FinGurú y Project Catalyst con enlaces. Fondo oscuro con estrellas. |
