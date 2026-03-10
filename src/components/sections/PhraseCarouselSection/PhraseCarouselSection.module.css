@@ -18,8 +18,12 @@
   display: inline-flex;
   flex-wrap: nowrap;
   align-items: center;
-  gap: 0;
-  padding: 0 2rem;
+  /*
+   * Sin padding ni gap en el track: el ancho total es exactamente 5C
+   * (5 copias del contenido). -20% = -C = una copia exacta → loop sin salto.
+   * padding: 0 2rem causaba: track_width = 5C + 4rem → -20% = -(C + 0.8rem),
+   * sobrando 0.8rem por ciclo y un flash de verde vacío en cada reset.
+   */
   animation: phraseScroll 25s linear infinite;
   will-change: transform;
 }
