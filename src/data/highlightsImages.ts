@@ -1,10 +1,10 @@
-/** Nombres de archivo en public/images; orden del carrusel. (Algunas .jpg, otras .JPG tras comprimir.) */
+/** Nombres de archivo en public/images/events; orden del carrusel. */
 export const HIGHLIGHTS_IMAGES = [
   "DSC00808.jpg",
   "DSC00854.jpg",
-  "DSC00868.JPG",
+  "dsc00868.jpg",
   "DSC00869.jpg",
-  "DSC00875.JPG",
+  "dsc00875.jpg",
   "DSC00877.jpg",
   "DSC00947.jpg",
   "DSC00974.jpg",
@@ -16,23 +16,23 @@ export const HIGHLIGHTS_IMAGES = [
   "DSC01047.jpg",
   "DSC01050.jpg",
   "DSC01053.jpg",
-  "DSC01063.JPG",
-  "DSC01065.JPG",
-  "DSC01072.JPG",
-  "DSC01091.JPG",
-  "DSC01096.JPG",
-  "DSC01111.JPG",
+  "dsc01063.jpg",
+  "dsc01065.jpg",
+  "dsc01072.jpg",
+  "dsc01091.jpg",
+  "dsc01096.jpg",
+  "dsc01111.jpg",
   "DSC01125.jpg",
   "DSC01134.jpg",
-  "DSC01140.JPG",
+  "dsc01140.jpg",
   "DSC01165.jpg",
-  "DSC01170.JPG",
-  "DSC01174.JPG",
-  "DSC01190.JPG",
-  "DSC01198.JPG",
+  "dsc01170.jpg",
+  "dsc01174.jpg",
+  "dsc01190.jpg",
+  "dsc01198.jpg",
 ] as const;
 
 export type HighlightImageName = (typeof HIGHLIGHTS_IMAGES)[number];
 
 /** Prefijo de ruta para las imágenes del carrusel. */
-export const HIGHLIGHTS_IMAGES_BASE = "/images";
+export const HIGHLIGHTS_IMAGES_BASE = "/images/events";

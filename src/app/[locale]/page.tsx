@@ -10,7 +10,7 @@ import {
   OrganizersSection,
 } from "@/components/sections";
 import { Footer } from "@/components/layout";
-import styles from "../page.module.css";
+import styles from "./page.module.css";
 
 type Props = { params: Promise<{ locale: string }> };
 

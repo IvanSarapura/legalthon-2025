@@ -27,9 +27,53 @@
   --ds-radius-3: 0.75rem;
   --ds-radius-pill: 9999px;
 
-  /* Tipografía */
+  /* Tipografía — familia */
   --ds-font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, sans-serif;
+
+  /* Tipografía — escala de tamaños */
+  --ds-text-xs: 0.75rem;
+  --ds-text-sm: 0.875rem;
+  --ds-text-base: 1rem;
+  --ds-text-lg: 1.125rem;
+  --ds-text-xl: 1.25rem;
+  --ds-text-2xl: 1.5rem;
+  --ds-text-3xl: 1.875rem;
+  --ds-text-4xl: 2.25rem;
+  --ds-text-5xl: 3rem;
+
+  /* Tipografía — pesos */
+  --ds-font-light: 300;
+  --ds-font-normal: 400;
+  --ds-font-medium: 500;
+  --ds-font-semibold: 600;
+  --ds-font-bold: 700;
+
+  /* Tipografía — line-height */
+  --ds-leading-none: 1;
+  --ds-leading-tight: 1.25;
+  --ds-leading-snug: 1.375;
+  --ds-leading-normal: 1.5;
+  --ds-leading-relaxed: 1.625;
+
+  /* Z-index */
+  --ds-z-base: 0;
+  --ds-z-dropdown: 100;
+  --ds-z-sticky: 200;
+  --ds-z-overlay: 300;
+  --ds-z-modal: 400;
+  --ds-z-toast: 500;
+
+  /* Sombras */
+  --ds-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.25);
+  --ds-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --ds-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --ds-shadow-glow: 0 0 20px var(--ds-color-brand-primary-glow);
+
+  /* Transiciones */
+  --ds-transition-fast: 150ms ease;
+  --ds-transition-base: 250ms ease;
+  --ds-transition-slow: 400ms ease;
 
   /* Marca */
   --ds-color-brand-primary: #a5ff00;
@@ -110,6 +154,36 @@
   --color-primary-text: #fff;
   --color-primary-hover: #383838;
   --color-secondary-hover: #1f1f1f;
+
+  /* Aliases semánticos — tipografía */
+  --text-xs: var(--ds-text-xs);
+  --text-sm: var(--ds-text-sm);
+  --text-base: var(--ds-text-base);
+  --text-lg: var(--ds-text-lg);
+  --text-xl: var(--ds-text-xl);
+  --text-2xl: var(--ds-text-2xl);
+  --text-3xl: var(--ds-text-3xl);
+  --text-4xl: var(--ds-text-4xl);
+  --text-5xl: var(--ds-text-5xl);
+
+  /* Aliases semánticos — z-index */
+  --z-base: var(--ds-z-base);
+  --z-dropdown: var(--ds-z-dropdown);
+  --z-sticky: var(--ds-z-sticky);
+  --z-overlay: var(--ds-z-overlay);
+  --z-modal: var(--ds-z-modal);
+  --z-toast: var(--ds-z-toast);
+
+  /* Aliases semánticos — sombras */
+  --shadow-sm: var(--ds-shadow-sm);
+  --shadow-md: var(--ds-shadow-md);
+  --shadow-lg: var(--ds-shadow-lg);
+  --shadow-glow: var(--ds-shadow-glow);
+
+  /* Aliases semánticos — transiciones */
+  --transition-fast: var(--ds-transition-fast);
+  --transition-base: var(--ds-transition-base);
+  --transition-slow: var(--ds-transition-slow);
 }
 
 @media (min-width: 768px) {

@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import styles from "./EventHighlightsSection.module.css";
+import styles from "./HighlightsCarousel.module.css";
 
 export type CarouselImage = { src: string; alt: string };
 

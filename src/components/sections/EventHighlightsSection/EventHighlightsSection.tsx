@@ -4,7 +4,7 @@ import {
   HIGHLIGHTS_IMAGES,
   HIGHLIGHTS_IMAGES_BASE,
 } from "@/data/highlightsImages";
-import { HighlightsCarousel } from "./HighlightsCarousel";
+import { HighlightsCarousel } from "./HighlightsCarousel/HighlightsCarousel";
 import styles from "./EventHighlightsSection.module.css";
 
 const highlightsImages = HIGHLIGHTS_IMAGES.map((filename) => ({

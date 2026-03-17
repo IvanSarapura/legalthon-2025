@@ -83,16 +83,6 @@
   transform: translateY(-50%);
 }
 
-@keyframes starTwinkle {
-  0%,
-  100% {
-    opacity: 0.25;
-  }
-  50% {
-    opacity: 0.85;
-  }
-}
-
 .wrapper {
   position: relative;
   z-index: 2;

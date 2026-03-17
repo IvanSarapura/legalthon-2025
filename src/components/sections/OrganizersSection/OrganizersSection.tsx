@@ -41,7 +41,7 @@ export async function OrganizersSection() {
           aria-label={t("cardano")}
         >
           <Image
-            src="/images/cardano-logo.png"
+            src="/images/sponsors/cardano-logo.png"
             alt={t("cardano")}
             width={80}
             height={80}
@@ -57,7 +57,7 @@ export async function OrganizersSection() {
           aria-label={t("uba")}
         >
           <Image
-            src="/images/uba-logo.png"
+            src="/images/sponsors/uba-logo.png"
             alt={t("uba")}
             width={80}
             height={80}
@@ -74,7 +74,7 @@ export async function OrganizersSection() {
         >
           <span className={styles.logoWithLabel}>
             <Image
-              src="/images/FinGuru-logo.webp"
+              src="/images/sponsors/FinGuru-logo.webp"
               alt=""
               width={80}
               height={80}
@@ -97,7 +97,7 @@ export async function OrganizersSection() {
           aria-label={t("catalyst")}
         >
           <Image
-            src="/images/catalyst-logo.png"
+            src="/images/sponsors/catalyst-logo.png"
             alt={t("catalyst")}
             width={80}
             height={80}

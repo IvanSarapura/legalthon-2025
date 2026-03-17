@@ -1,5 +1,6 @@
 /* Base móvil; breakpoints 480 / 768 / 1024px (--bp-*). */
 @import "../styles/tokens.css";
+@import "../styles/animations.css";
 
 :root {
   --font-main: var(--ds-font-family-sans);

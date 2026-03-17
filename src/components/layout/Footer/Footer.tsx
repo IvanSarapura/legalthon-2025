@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { ScrollToTopButton } from "./ScrollToTopButton";
+import { ScrollToTopButton } from "@/components/ui/ScrollToTop/ScrollToTopButton";
 import styles from "./Footer.module.css";
 
 export async function Footer() {

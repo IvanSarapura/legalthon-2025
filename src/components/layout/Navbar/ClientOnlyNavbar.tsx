@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Navbar } from "@/components/layout/Navbar/Navbar";
+import { Navbar } from "./Navbar";
 import styles from "./ClientOnlyNavbar.module.css";
 
 /** Evita volver a mostrar el placeholder tras cambio de idioma. */

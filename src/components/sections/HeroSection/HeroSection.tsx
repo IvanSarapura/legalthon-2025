@@ -31,7 +31,7 @@ export async function HeroSection() {
     <section className={styles.section} aria-label={t("ariaLabel")}>
       <div className={styles.backgroundImage}>
         <Image
-          src="/images/JusticeGemini.png"
+          src="/images/hero/JusticeGemini.png"
           alt=""
           fill
           priority
