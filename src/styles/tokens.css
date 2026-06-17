@@ -195,27 +195,3 @@
   }
 }
 
-/* Light theme (opcional): mantiene compatibilidad con prefers-color-scheme */
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-bg: #ffffff;
-    --color-surface: #f8f8f8;
-    --color-surface-hover: #f0f0f0;
-    --color-text: #171717;
-    --color-text-muted: #555555;
-    --color-text-secondary: #666666;
-    --color-text-tertiary: #777777;
-    --color-border: #e5e5e5;
-
-    --color-section-alt-bg: #f8f8f8;
-    --color-card-bg: #ffffff;
-    --color-card-border: #e5e5e5;
-    --color-text-on-section-alt: #171717;
-
-    --foreground: #171717;
-    --color-foreground: #171717;
-
-    --color-secondary-hover: #f5f5f5;
-  }
-}
-
